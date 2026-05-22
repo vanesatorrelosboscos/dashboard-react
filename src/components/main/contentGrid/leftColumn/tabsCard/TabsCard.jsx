@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import CardHeader from "./CardHeader"
+import TabsCardHeader from "./TabsCardHeader"
 import TasksTab from "./tabs/tasks/TasksTab"
 import TeamTab from "./tabs/team/TeamTab"
 import ActivityTab from "./tabs/activity/ActivityTab"
@@ -21,7 +21,7 @@ function TabsCard() {
 
     return (
         <Card>
-            <CardHeader activeTab={activeTab} onTabChange={setActiveTab} />
+            <TabsCardHeader activeTab={activeTab} onTabChange={setActiveTab} />
             <CardBody>
                 <TasksTab 
                     isTabActive={activeTab === "tasks"} 

@@ -1,13 +1,13 @@
-import cardHeaderButtons from "./cardHeaderButtons"
+import tabsCardHeaderButtons from "./tabsCardHeaderButtons"
 import TabsBtn from "./TabsBtn"
 
-function CardHeader({ activeTab, onTabChange }) {
+function TabsCardHeader({ activeTab, onTabChange }) {
     return (
         <div className="card-header">
             <div className="tabs" id="mainTabs">
-                {cardHeaderButtons.map((button) => (
+                {tabsCardHeaderButtons.map((button) => (
                     <TabsBtn
-                        key={crypto.randomUUID()}
+                        key={`${button.tab}-tab`}
                         tab={button.tab}
                         isActive={button.tab === activeTab}
                         icon={button.icon}
@@ -20,4 +20,4 @@ function CardHeader({ activeTab, onTabChange }) {
     )
 }
 
-export default CardHeader
+export default TabsCardHeader

@@ -1,4 +1,4 @@
-const cardHeaderButtons = [
+const tabsCardHeaderButtons = [
     {
         "tab": "tasks",
         "icon": "📋",
@@ -25,4 +25,4 @@ const cardHeaderButtons = [
     }
 ]
 
-export default cardHeaderButtons
+export default tabsCardHeaderButtons
