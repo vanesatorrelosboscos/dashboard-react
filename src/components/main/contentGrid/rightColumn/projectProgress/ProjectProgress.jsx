@@ -1,10 +1,11 @@
+import Card from "../../../../ui/Card"
 import CardHeader from "../CardHeader"
 import ProgressItem from "./ProgressItem"
 import projects from "./projects"
 
 function ProjectProgress(){
     return(
-        <div className="card">
+        <Card>
             <CardHeader 
                 title = "📈 Project Progress"
                 style = "badge badge-warning"
@@ -22,7 +23,7 @@ function ProjectProgress(){
                     ))}
                 </div>
             </div>
-        </div>
+        </Card>
     )
 }
 

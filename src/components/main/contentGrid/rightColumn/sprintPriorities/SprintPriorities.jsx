@@ -1,10 +1,11 @@
+import Card from "../../../../ui/Card"
 import CardHeader from "../CardHeader"
 import DragPriority from "./DragPriority"
 
 function SprintPriorities({ sprintTasks }){
 
     return (
-        <div className="card">
+        <Card>
             <CardHeader 
                 title = "🎯 Sprint Priorities"
                 style = "drag-text"
@@ -22,7 +23,7 @@ function SprintPriorities({ sprintTasks }){
                     ))}
                 </div>
             </div>
-        </div>
+        </Card>
     )
 }
 

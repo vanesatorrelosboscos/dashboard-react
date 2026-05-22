@@ -2,6 +2,7 @@ import CardHeader from "../CardHeader"
 import TimerBtn from "./TimerBtn"
 import { useState, useEffect } from "react"
 import { useToast } from "../../../../../context/ToastContext"
+import Card from "../../../../ui/Card"
 
 const TIMER_STATUS = {
     READY: 'READY',
@@ -94,7 +95,7 @@ function FocusTimer() {
     }
 
     return (
-        <div className="card">
+        <Card>
             <CardHeader
                 title="⏱ Focus Timer"
                 style={`badge badge-${badgeType}`}
@@ -134,7 +135,7 @@ function FocusTimer() {
                     </button>
                 </div>
             </div>
-        </div>
+        </Card>
     )
 }
 

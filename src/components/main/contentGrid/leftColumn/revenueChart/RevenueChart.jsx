@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import CardHeader from '../../rightColumn/CardHeader';
+import CardHeader from '../../rightColumn/CardHeader'
+import Card from '../../../../ui/Card'
 
 const data = [42, 58, 47, 73, 61, 88, 95, 72, 84, 103, 91, 118];
 const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -116,7 +117,7 @@ function RevenueChart() {
     };
 
     return (
-        <div className="card">
+        <Card>
             <CardHeader 
                 title = "📊 Monthly Revenue"
                 style = "badge badge-success"
@@ -148,7 +149,7 @@ function RevenueChart() {
                     </div>
                 </div>
             </div>
-        </div>
+        </Card>
     )
 }
 

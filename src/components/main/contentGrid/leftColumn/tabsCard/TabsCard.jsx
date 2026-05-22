@@ -4,6 +4,7 @@ import TasksTab from "./tabs/tasks/TasksTab"
 import TeamTab from "./tabs/team/TeamTab"
 import ActivityTab from "./tabs/activity/ActivityTab"
 import FormTab from "./tabs/form/FormTab"
+import Card from "../../../../ui/Card"
 
 function TabsCard() {
     const [activeTab, setActiveTab] = useState("tasks")
@@ -18,7 +19,7 @@ function TabsCard() {
     }, [toDoList])
 
     return (
-        <div className="card">
+        <Card>
             <CardHeader activeTab={activeTab} onTabChange={setActiveTab} />
             <div className="card-body">
                 <TasksTab 
@@ -39,7 +40,7 @@ function TabsCard() {
                     isTabActive={activeTab === "form"} 
                 />
             </div>
-        </div>
+        </Card>
     )
 }
 
