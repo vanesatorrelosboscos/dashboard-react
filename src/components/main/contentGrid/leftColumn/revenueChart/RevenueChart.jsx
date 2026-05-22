@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import CardHeader from '../../rightColumn/CardHeader'
+import CardHeader from '../../../../ui/CardHeader'
 import Card from '../../../../ui/Card'
+import CardBody from '../../../../ui/CardBody'
 
 const data = [42, 58, 47, 73, 61, 88, 95, 72, 84, 103, 91, 118];
 const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -124,7 +125,7 @@ function RevenueChart() {
                 text = "Live"
             />
             
-            <div className="card-body">
+            <CardBody>
                 <div className="chart-wrap" style={{ position: 'relative', width: '100%' }}>
                     
                     <canvas
@@ -148,7 +149,7 @@ function RevenueChart() {
                         {tooltip.text}
                     </div>
                 </div>
-            </div>
+            </CardBody>
         </Card>
     )
 }

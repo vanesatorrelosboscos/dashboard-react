@@ -1,5 +1,6 @@
 import Card from "../../../../ui/Card"
-import CardHeader from "../CardHeader"
+import CardBody from "../../../../ui/CardBody"
+import CardHeader from "../../../../ui/CardHeader"
 import ProgressItem from "./ProgressItem"
 import projects from "./projects"
 
@@ -11,7 +12,7 @@ function ProjectProgress(){
                 style = "badge badge-warning"
                 text = "Q1 2026"
             />
-            <div className="card-body">
+            <CardBody>
                 <div className="progress-list" id="progressList">
                     {projects.map(p => (
                         <ProgressItem 
@@ -22,7 +23,7 @@ function ProjectProgress(){
                         />
                     ))}
                 </div>
-            </div>
+            </CardBody>
         </Card>
     )
 }

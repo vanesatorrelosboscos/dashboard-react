@@ -1,5 +1,6 @@
 import Card from "../../../../ui/Card"
-import CardHeader from "../CardHeader"
+import CardBody from "../../../../ui/CardBody"
+import CardHeader from "../../../../ui/CardHeader"
 import DragPriority from "./DragPriority"
 
 function SprintPriorities({ sprintTasks }){
@@ -11,7 +12,7 @@ function SprintPriorities({ sprintTasks }){
                 style = "drag-text"
                 text = "Drag to reorder"
             />
-            <div className="card-body">
+            <CardBody>
                 <div className="drag-list" id="dragList">
                     {sprintTasks.map(item =>(
                         <DragPriority 
@@ -22,7 +23,7 @@ function SprintPriorities({ sprintTasks }){
                         />
                     ))}
                 </div>
-            </div>
+            </CardBody>
         </Card>
     )
 }

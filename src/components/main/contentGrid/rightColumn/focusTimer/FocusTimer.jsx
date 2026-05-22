@@ -1,8 +1,9 @@
-import CardHeader from "../CardHeader"
+import CardHeader from "../../../../ui/CardHeader"
 import TimerBtn from "./TimerBtn"
 import { useState, useEffect } from "react"
 import { useToast } from "../../../../../context/ToastContext"
 import Card from "../../../../ui/Card"
+import CardBody from "../../../../ui/CardBody"
 
 const TIMER_STATUS = {
     READY: 'READY',
@@ -103,7 +104,7 @@ function FocusTimer() {
                 text={badgeText}
             />
             
-            <div className="card-body">
+            <CardBody>
                 <div className="timer-display">
                     <div className="timer-digits" id="timerDisplay">
                         {formatTime(currentSeconds)}
@@ -134,7 +135,7 @@ function FocusTimer() {
                         ↺ Reset
                     </button>
                 </div>
-            </div>
+            </CardBody>
         </Card>
     )
 }
