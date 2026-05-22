@@ -1,9 +1,9 @@
-import CardHeader from "../../../../ui/CardHeader"
+import CardHeader from "../../../../ui/card/CardHeader"
 import TimerBtn from "./TimerBtn"
 import { useState, useEffect } from "react"
 import { useToast } from "../../../../../context/ToastContext"
-import Card from "../../../../ui/Card"
-import CardBody from "../../../../ui/CardBody"
+import Card from "../../../../ui/card/Card"
+import CardBody from "../../../../ui/card/CardBody"
 
 const TIMER_STATUS = {
     READY: 'READY',

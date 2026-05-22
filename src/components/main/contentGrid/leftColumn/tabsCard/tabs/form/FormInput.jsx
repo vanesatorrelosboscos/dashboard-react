@@ -1,3 +1,5 @@
+import InputError from "../../../../../../ui/InputError";
+
 function FormInput({ label, type, id, placeholder, value, onChange, hasError, isSuccess, errorMsg }) {
     return (
         <div className="form-group">
@@ -16,9 +18,9 @@ function FormInput({ label, type, id, placeholder, value, onChange, hasError, is
                     ✅
                 </span>
             </div>
-            <div className="form-error" style={{ display: hasError ? 'block' : 'none' }}>
-                {errorMsg}
-            </div>
+            {hasError && 
+                <InputError msg={errorMsg} />
+            }
         </div>
     );
 }

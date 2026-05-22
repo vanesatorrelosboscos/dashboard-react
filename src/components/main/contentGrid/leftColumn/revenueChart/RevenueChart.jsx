@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import CardHeader from '../../../../ui/CardHeader'
-import Card from '../../../../ui/Card'
-import CardBody from '../../../../ui/CardBody'
+import CardHeader from '../../../../ui/card/CardHeader'
+import Card from '../../../../ui/card/Card'
+import CardBody from '../../../../ui/card/CardBody'
 
 const data = [42, 58, 47, 73, 61, 88, 95, 72, 84, 103, 91, 118];
 const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

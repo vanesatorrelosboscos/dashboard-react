@@ -4,8 +4,8 @@ import TasksTab from "./tabs/tasks/TasksTab"
 import TeamTab from "./tabs/team/TeamTab"
 import ActivityTab from "./tabs/activity/ActivityTab"
 import FormTab from "./tabs/form/FormTab"
-import Card from "../../../../ui/Card"
-import CardBody from "../../../../ui/CardBody"
+import Card from "../../../../ui/card/Card"
+import CardBody from "../../../../ui/card/CardBody"
 
 function TabsCard() {
     const [activeTab, setActiveTab] = useState("tasks")

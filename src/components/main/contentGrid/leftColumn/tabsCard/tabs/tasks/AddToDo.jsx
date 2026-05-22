@@ -1,5 +1,8 @@
 import { useState, useRef } from "react"
 import useShortcut from "../../../../../../../hooks/useShortcut"
+import ToDoInput from "./ToDoInput"
+import AddToDoBtn from "./AddToDoBtn"
+import InputError from "../../../../../../ui/InputError"
 
 function AddToDo({ onAdd }) {
     const [inputValue, setInputValue] = useState('')
@@ -12,7 +15,7 @@ function AddToDo({ onAdd }) {
     })
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
         if (!inputValue.trim()) {
             setShowError(true)
@@ -34,22 +37,16 @@ function AddToDo({ onAdd }) {
         <>
             <form onSubmit={handleSubmit}>
                 <div className="todo-input-row">
-                    <input 
-                        type="text" 
-                        id="todoInput" 
-                        placeholder="Add a new task… (Ctrl+M)" 
-                        value={inputValue} 
-                        onChange={(e) => setInputValue(e.target.value)} 
-                        ref={taskInputRef}
+                    <ToDoInput 
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        inputRef={taskInputRef}
                     />
-                    <button type="submit" className="btn btn-primary btn-sm" id="addTodoBtn">
-                        + Add
-                    </button>
+                    <AddToDoBtn />
                 </div>
-                
             </form>
             {showError && (
-                <div className="todo-error" id="todoError">⚠ Please enter a task name.</div>
+                <InputError msg="⚠ Please enter a task name." className="todo-error"/>
             )}
         </>
     )

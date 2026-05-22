@@ -1,6 +1,6 @@
-import Card from "../../../../ui/Card"
-import CardBody from "../../../../ui/CardBody"
-import CardHeader from "../../../../ui/CardHeader"
+import Card from "../../../../ui/card/Card"
+import CardBody from "../../../../ui/card/CardBody"
+import CardHeader from "../../../../ui/card/CardHeader"
 import ProgressItem from "./ProgressItem"
 import projects from "./projects"
 
