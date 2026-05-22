@@ -2,8 +2,10 @@ import Card from "../../../../ui/Card"
 import CardBody from "../../../../ui/CardBody"
 import CardHeader from "../../../../ui/CardHeader"
 import DragPriority from "./DragPriority"
+import useDragReorder from "../../../../../hooks/useDragReorder"
 
-function SprintPriorities({ sprintTasks }){
+function SprintPriorities({ sprintTasks, setSprintTasks}){
+    const handleDrop = useDragReorder(sprintTasks, setSprintTasks, 'custom/sprint-id')
 
     return (
         <Card>
@@ -14,12 +16,14 @@ function SprintPriorities({ sprintTasks }){
             />
             <CardBody>
                 <div className="drag-list" id="dragList">
-                    {sprintTasks.map(item =>(
+                    {sprintTasks.map(item => (
                         <DragPriority 
-                            key = {crypto.randomUUID()}
-                            text = {item.text}
-                            tag = {item.tag}
-                            priority = {item.priority}
+                            key={item.id}
+                            id={item.id}
+                            text={item.text}
+                            tag={item.tag}
+                            priority={item.priority}
+                            onDrop={(e) => handleDrop(e, item.id)}
                         />
                     ))}
                 </div>

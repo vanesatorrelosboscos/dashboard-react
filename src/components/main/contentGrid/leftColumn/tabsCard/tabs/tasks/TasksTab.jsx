@@ -2,7 +2,8 @@ import FilterBtn from "./FilterBtn"
 import AddToDo from "./AddToDo"
 import ToDoTask from "./ToDoTask"
 import TasksFooter from "./TasksFooter"
-import {useState} from "react"
+import { useState } from "react"
+import useDragReorder from "../../../../../../../hooks/useDragReorder"
 
 function TasksTab({ toDoList, setToDoList, isTabActive }) {
     function addTask(text) {
@@ -12,7 +13,7 @@ function TasksTab({ toDoList, setToDoList, isTabActive }) {
             id: self.crypto.randomUUID(),
             text,
             completed: false
-        };
+        }
         setToDoList([newTask, ...toDoList ])
     }
 
@@ -26,7 +27,9 @@ function TasksTab({ toDoList, setToDoList, isTabActive }) {
         setToDoList(toDoList.filter(task => task.id !== id))
     }
 
-    const remainingTasks = toDoList.filter(task => !task.completed).length;
+    const handleDrop = useDragReorder(toDoList, setToDoList, 'custom/todo-id')
+
+    const remainingTasks = toDoList.filter(task => !task.completed).length
     const [currentFilter, setCurrentFilter] = useState("all")
 
     const filterButtons = [
@@ -36,8 +39,8 @@ function TasksTab({ toDoList, setToDoList, isTabActive }) {
     ]
 
     const filteredTasks = toDoList.filter(task => {
-        if (currentFilter === "active")  return !task.completed;
-        if (currentFilter === "completed") return task.completed;
+        if (currentFilter === "active")  return !task.completed
+        if (currentFilter === "completed") return task.completed
     
         return true
     })
@@ -49,7 +52,7 @@ function TasksTab({ toDoList, setToDoList, isTabActive }) {
             <div className="todo-filters">
                 {filterButtons.map(btn => (
                     <FilterBtn 
-                        key={crypto.randomUUID()}
+                        key={btn.filter}
                         filter={btn.filter} 
                         label={btn.label} 
                         isActive={currentFilter === btn.filter} 
@@ -66,6 +69,7 @@ function TasksTab({ toDoList, setToDoList, isTabActive }) {
                         done={task.completed}
                         onToggle={toggleTaskCompletion}
                         onDelete={deleteTask}
+                        onDrop={(e) => handleDrop(e, task.id)}
                     />
                 ))}
             </div>

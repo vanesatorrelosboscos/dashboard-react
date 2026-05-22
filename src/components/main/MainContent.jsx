@@ -5,17 +5,17 @@ import initialDragItems from "./contentGrid/rightColumn/sprintPriorities/dragIte
 import {useState} from "react"
 
 function MainContent() {
-    const [sprintTasks, setSprintTasks] = useState(initialDragItems);
+    const [sprintTasks, setSprintTasks] = useState(initialDragItems)
 
     const handleAddTask = (newTask) => {
-        setSprintTasks([...sprintTasks, newTask]);
-    };
+        setSprintTasks([...sprintTasks, newTask])
+    }
     
     return (
         <main className="main">
             <Header onAddTask={handleAddTask} />
             <KpiGrid />
-            <ContentGrid sprintTasks={sprintTasks} />
+            <ContentGrid sprintTasks={sprintTasks} setSprintTasks={setSprintTasks} />
         </main>
     )
 }

@@ -1,11 +1,11 @@
 import LeftColumn from "./leftColumn/LeftColumn"
 import RightColumn from "./rightColumn/RightColumn"
 
-function ContentGrid({ sprintTasks }) {
+function ContentGrid({ sprintTasks, setSprintTasks}) {
   return (
     <div className="content-grid">
       <LeftColumn />
-      <RightColumn sprintTasks = {sprintTasks}/>
+      <RightColumn sprintTasks = {sprintTasks} setSprintTasks={setSprintTasks}/>
     </div>
   )
 }
