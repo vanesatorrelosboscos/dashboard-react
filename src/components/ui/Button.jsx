@@ -3,7 +3,8 @@ const BUTTON_TYPES = {
     primary: "btn btn-primary",
     filter: "filter-btn",
     tab: "tab-btn",
-    preset: "preset-btn"
+    preset: "preset-btn",
+    modalClose: "modal-close"
 }
 
 function Button({ variant = "primary", type = "button", onClick, text, id, className = "" }) {

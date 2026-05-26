@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import ShortCutItem from './ShortcutItem'
 import shortcutsData from './shortcutsData'
+import Button from '../../ui/Button'
 
 function ShortcutsModal({ isOpen, onClose }) {
     useEffect(() => {
@@ -35,7 +36,7 @@ function ShortcutsModal({ isOpen, onClose }) {
                 
                 <div className="modal-header">
                     <span className="modal-title">⌨️ Keyboard Shortcuts</span>
-                    <button className="modal-close" id="shortcutsClose" onClick={onClose}>✕</button>
+                    <Button id="shortcutsClose" variant="modalClose" text="✕" onClick={onClose}/>
                 </div>
                 
                 <div className="modal-body">
