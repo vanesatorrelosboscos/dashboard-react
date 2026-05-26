@@ -4,6 +4,12 @@ import FormSelect from './FormSelect'
 import { useToast } from '../../../../../../../context/ToastContext'
 import Button from '../../../../../../ui/Button'
 
+const FORM_PATTERNS = {
+    name: /^.{2,}$/,
+    password: /^(?=.*[0-9]).{8,}$/,
+    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+}
+
 function FormTab({ isTabActive }) {
     const showToast = useToast()
     const [formData, setFormData] = useState({
@@ -23,10 +29,9 @@ function FormTab({ isTabActive }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
-        const isNameValid = formData.fname.trim().length >= 2
-        const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.femail.trim())
-        const isPassValid = /^(?=.*[0-9]).{8,}$/.test(formData.fpass.trim())
+        const isNameValid = FORM_PATTERNS.name.test(formData.fname.trim())
+        const isEmailValid = FORM_PATTERNS.email.test(formData.femail.trim())
+        const isPassValid = FORM_PATTERNS.password.test(formData.fpass.trim())
         const isDeptValid = formData.fdept !== ''
 
         const isValid = isNameValid && isEmailValid && isPassValid && isDeptValid
@@ -59,8 +64,8 @@ function FormTab({ isTabActive }) {
                         placeholder="Jane Doe"
                         value={formData.fname}
                         onChange={handleChange}
-                        required={true}
-                        pattern={/^.{2,}$/}
+                        required
+                        pattern={FORM_PATTERNS.name}
                         errorMsg="Min. 2 characters required."
                         submitCount={submitCount}
                     />
@@ -73,8 +78,8 @@ function FormTab({ isTabActive }) {
                         placeholder="jane@nexus.io"
                         value={formData.femail}
                         onChange={handleChange}
-                        required={true}
-                        pattern={/^[^\s@]+@[^\s@]+\.[^\s@]+$/}
+                        required
+                        pattern={FORM_PATTERNS.email}
                         errorMsg="Enter a valid email address."
                         submitCount={submitCount}
                     />
@@ -89,8 +94,8 @@ function FormTab({ isTabActive }) {
                         placeholder="Min 8 chars + 1 number"
                         value={formData.fpass}
                         onChange={handleChange}
-                        required={true}
-                        pattern={/^(?=.*[0-9]).{8,}$/}
+                        required
+                        pattern={FORM_PATTERNS.password}
                         errorMsg="Min 8 chars, at least 1 number."
                         submitCount={submitCount}
                     />
