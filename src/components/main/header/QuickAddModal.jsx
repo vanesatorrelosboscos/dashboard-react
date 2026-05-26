@@ -2,6 +2,15 @@ import { useEffect, useState } from 'react'
 import { useToast } from '../../../context/ToastContext'
 import Button from '../../ui/Button'
 import Input from '../../ui/Input'
+import Select from '../../ui/Select'
+
+const PRIORITY_OPTIONS = [
+    { value: "high", label: "🔴 High" },
+    { value: "medium", label: "🟡 Medium" },
+    { value: "low", label: "🟢 Low" }
+]
+
+const TAG_OPTIONS = ["Design", "Dev", "QA", "Marketing"]
 
 function QuickAddModal({ isOpen, onClose, onAddTask }) {
     const showToast = useToast()
@@ -58,19 +67,8 @@ function QuickAddModal({ isOpen, onClose, onAddTask }) {
     if (!isOpen) return null
 
     return (
-        <div 
-            className="overlay" 
-            id="overlay" 
-            onClick={onClose} 
-            style={{ display: 'flex' }}
-        >
-            <div 
-                className="modal" 
-                id="modal" 
-                role="dialog" 
-                aria-modal="true" 
-                onClick={(e) => e.stopPropagation()}
-            >
+        <div className="overlay" id="overlay" onClick={onClose} style={{ display: 'flex' }}>
+            <div className="modal" id="modal" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
                 <div className="modal-header">
                     <span className="modal-title">⚡ Quick Add Task</span>
                     <Button id="modalClose" variant="modalClose" text="✕" onClick={onClose}/>
@@ -88,25 +86,21 @@ function QuickAddModal({ isOpen, onClose, onAddTask }) {
                         />
                     </div>
                     <div className="modal-bottom">
-                        <div className="form-group">
-                            <label className="form-label">Priority</label>
-                            <select className="form-input" id="modalPriority"  value={priority}
-                                onChange={(e) => setPriority(e.target.value)}>
-                                <option value="high">🔴 High</option>
-                                <option value="medium">🟡 Medium</option>
-                                <option value="low">🟢 Low</option>
-                            </select>
-                        </div>
-                        <div className="form-group">
-                            <label className="form-label">Tag</label>
-                            <select className="form-input" id="modalTag" value={tag}
-                                onChange={(e) => setTag(e.target.value)}>
-                                <option>Design</option>
-                                <option>Dev</option>
-                                <option>QA</option>
-                                <option>Marketing</option>
-                            </select>
-                        </div>
+                        <Select 
+                            label="Priority"
+                            id="modalPriority"
+                            value={priority}
+                            onChange={(e) => setPriority(e.target.value)}
+                            options={PRIORITY_OPTIONS}
+                        />
+
+                        <Select 
+                            label="Tag"
+                            id="modalTag"
+                            value={tag}
+                            onChange={(e) => setTag(e.target.value)}
+                            options={TAG_OPTIONS}
+                        />
                     </div>
                     
                     <Button type="submit" className="primary" id="modalAddBtn" text="Add to Sprint →" />

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Input from '../../../../../../ui/Input'
-import FormSelect from './FormSelect'
+import Select from '../../../../../../ui/Select'
 import { useToast } from '../../../../../../../context/ToastContext'
 import Button from '../../../../../../ui/Button'
 
@@ -9,6 +9,8 @@ const FORM_PATTERNS = {
     password: /^(?=.*[0-9]).{8,}$/,
     email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 }
+
+const DEPARTMENTS = ['Engineering', 'Design', 'Marketing', 'Operations']
 
 function FormTab({ isTabActive }) {
     const showToast = useToast()
@@ -29,6 +31,7 @@ function FormTab({ isTabActive }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        
         const isNameValid = FORM_PATTERNS.name.test(formData.fname.trim())
         const isEmailValid = FORM_PATTERNS.email.test(formData.femail.trim())
         const isPassValid = FORM_PATTERNS.password.test(formData.fpass.trim())
@@ -101,15 +104,16 @@ function FormTab({ isTabActive }) {
                     />
 
                     {/* 4. DEPARTMENT */}
-                    <FormSelect 
+                    <Select 
                         label="Department"
                         id="fdept"
-                        options={['Engineering', 'Design', 'Marketing', 'Operations']}
+                        options={DEPARTMENTS} 
                         value={formData.fdept}
                         onChange={handleChange}
                         hasError={selectValidations.hasError}
                         isSuccess={selectValidations.isSuccess}
                         errorMsg="Please select a department."
+                        placeholder="Select department…" 
                     />
                 </div>
 
