@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react"
 import Logo from "./Logo"
 import SearchBar from "./SearchBar"
-import navBarButtons from "./navBarButtons"
-import NavBarBtn from "./NavBarBtn"
+import Button from "../ui/Button"
 import Avatar from "./Avatar"
 import ShortcutsModal from "./shortcutsModal/ShortcutsModal"
 import useShortcut from "../../hooks/useShortcut"
@@ -46,6 +45,30 @@ function NavBar({ onToggleMenu }) {
         showToast("You have 3 new notifications", "info", "Notifications")
     }
 
+    const NAVBAR_BUTTONS = [
+        {
+            "id": "themeToggle",
+            "className": "icon-btn",
+            "title": "Toggle theme",
+            "icon": "🌙",
+            "onclick": handleThemeToggle
+        },
+        {
+            "id": "shortcutsBtn",
+            "className": "icon-btn",
+            "title": "Keyboard shortcuts (Ctrl+/)",
+            "icon": "⌨️",
+            "onclick": handleShortcutsOpen
+        },
+        {
+            "id": "notifBtn",
+            "className": "icon-btn",
+            "title": "Notifications",
+            "icon": "🔔",
+            "onclick": handleNotifClick
+        }
+    ]
+
     useShortcut("d", handleThemeToggle)
     useShortcut("b", handleShortcutsOpen)
 
@@ -57,36 +80,15 @@ function NavBar({ onToggleMenu }) {
                 <div className="navbar-right">
                     <SearchBar /> 
                     
-                    {navBarButtons.map(btn => {
-                        if (btn.id === 'themeToggle') {
-                            return (
-                                <NavBarBtn key={btn.id} id={btn.id} title={btn.title} 
-                                    icon={isLightMode ? '☀️' : '🌙'} 
-                                    onClick={handleThemeToggle} 
-                                />
-                            )
-                        }
-                        
-                        if (btn.id === 'shortcutsBtn') {
-                            return (
-                                <NavBarBtn key={btn.id} id={btn.id} title={btn.title} 
-                                    icon={btn.icon} 
-                                    onClick={handleShortcutsOpen} 
-                                />
-                            )
-                        }
-
-                        if (btn.id === 'notifBtn') {
-                            return (
-                                <NavBarBtn key={btn.id} id={btn.id} title={btn.title} 
-                                    icon={btn.icon} 
-                                    onClick={handleNotifClick} 
-                                />
-                            )
-                        }
-                        
-                        return null
-                    })}
+                    {NAVBAR_BUTTONS.map(btn => (
+                        <Button 
+                            key={btn.id}
+                            id={btn.id}
+                            title={btn.title}
+                            text={btn.icon}
+                            onClick={btn.onclick}
+                        />
+                    ))}
 
                     <Avatar name="JD" />
                 </div>

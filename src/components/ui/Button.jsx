@@ -4,13 +4,15 @@ const BUTTON_TYPES = {
     filter: "filter-btn",
     tab: "tab-btn",
     preset: "preset-btn",
-    modalClose: "modal-close"
+    modalClose: "modal-close",
+    icon: "icon-btn"
 }
 
-function Button({ variant = "primary", type = "button", onClick, text, id, className = "" }) {
+function Button({ variant = "primary", type = "button", onClick, text, id, className = "", title}) {
     return (
         <button 
             id={id} 
+            title={title}
             type={type} 
             className={`${BUTTON_TYPES[variant]} ${className}`.trim()} 
             onClick={onClick}
