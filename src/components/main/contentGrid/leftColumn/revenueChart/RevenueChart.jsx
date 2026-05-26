@@ -121,7 +121,7 @@ function RevenueChart() {
         <Card>
             <CardHeader 
                 title = "📊 Monthly Revenue"
-                style = "badge badge-success"
+                className = "badge badge-success"
                 text = "Live"
             />
             

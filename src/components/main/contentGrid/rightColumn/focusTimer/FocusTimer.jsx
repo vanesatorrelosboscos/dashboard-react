@@ -21,7 +21,7 @@ function FocusTimer() {
         <Card>
             <CardHeader
                 title="⏱ Focus Timer"
-                style={`badge badge-${badgeType}`}
+                className={`badge badge-${badgeType}`}
                 id="timerStatus"
                 text={badgeText}
             />

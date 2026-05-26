@@ -11,7 +11,7 @@ function SprintPriorities({ sprintTasks, setSprintTasks}){
         <Card>
             <CardHeader 
                 title = "🎯 Sprint Priorities"
-                style = "drag-text"
+                className = "drag-text"
                 text = "Drag to reorder"
             />
             <CardBody>
