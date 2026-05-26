@@ -3,6 +3,7 @@ import FormSelect from './FormSelect'
 import { useState } from 'react'
 import validateApplicationForm from './validateApplicationForm'
 import { useToast } from '../../../../../../../context/ToastContext'
+import Button from '../../../../../../ui/Button'
 
 function FormTab({ isTabActive }) {
     const showToast = useToast()
@@ -17,7 +18,7 @@ function FormTab({ isTabActive }) {
     const [success, setSuccess] = useState({})
 
     const handleChange = (e) => {
-        const { id, value } = e.target;
+        const { id, value } = e.target
         setFormData({ ...formData, [id]: value })
         
         setErrors(prev => ({ ...prev, [id]: false }))
@@ -101,7 +102,7 @@ function FormTab({ isTabActive }) {
 
                 </div>
 
-                <button type="submit" id="submitBtn" className="btn btn-primary">Submit Application →</button>
+                <Button type="submit" id="submitBtn" variant="primary" text="Submit Aplication →"/>
             </form>
         </div>
     )

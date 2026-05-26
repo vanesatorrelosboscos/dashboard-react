@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useToast } from '../../../context/ToastContext'
+import Button from '../../ui/Button'
 
 function QuickAddModal({ isOpen, onClose, onAddTask }) {
     const showToast = useToast()
@@ -102,9 +103,7 @@ function QuickAddModal({ isOpen, onClose, onAddTask }) {
                         </div>
                     </div>
                     
-                    <button type="submit" className="btn btn-primary" id="modalAddBtn">
-                        Add to Sprint →
-                    </button>
+                    <Button type="submit" className="primary" id="modalAddBtn" text="Add to Sprint →" />
                 </form>
             </div>
         </div>

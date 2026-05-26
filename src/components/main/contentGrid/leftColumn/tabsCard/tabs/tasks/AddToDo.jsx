@@ -1,7 +1,7 @@
 import { useState, useRef } from "react"
 import useShortcut from "../../../../../../../hooks/useShortcut"
 import ToDoInput from "./ToDoInput"
-import AddToDoBtn from "./AddToDoBtn"
+import Button from "../../../../../../ui/Button"
 import InputError from "../../../../../../ui/InputError"
 
 function AddToDo({ onAdd }) {
@@ -42,7 +42,12 @@ function AddToDo({ onAdd }) {
                         onChange={(e) => setInputValue(e.target.value)}
                         inputRef={taskInputRef}
                     />
-                    <AddToDoBtn />
+                    <Button
+                        variant="primary"
+                        type="submit"
+                        id="addTodoBtn"
+                        text="+ Add"
+                    />
                 </div>
             </form>
             {showError && <InputError msg="⚠ Please enter a task name." className="todo-error"/>}

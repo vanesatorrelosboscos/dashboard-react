@@ -1,26 +1,22 @@
 const tabsCardHeaderButtons = [
     {
         "tab": "tasks",
-        "icon": "📋",
-        "label": "Tasks",
+        "text": "📋 Tasks",
         "active": true
     },
     {
         "tab": "team",
-        "icon": "👥",
-        "label": "Team",
+        "text": "👥 Team",
         "active": false
     },
     {
         "tab": "activity",
-        "icon": "⚡",
-        "label": "Activity",
+        "text": "⚡ Activity",
         "active": false
     },
     {
         "tab": "form",
-        "icon": "📝",
-        "label": "Contact",
+        "text": "📝 Contact",
         "active": false
     }
 ]

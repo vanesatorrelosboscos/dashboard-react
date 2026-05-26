@@ -1,9 +1,9 @@
 import { useState } from "react"
 import HeaderTitle from "./HeaderTitle"
-import HeaderBtn from "./HeaderBtn"
 import QuickAddModal from "./QuickAddModal"
 import useShortcut from "../../../hooks/useShortcut"
 import { useToast } from "../../../context/ToastContext"
+import Button from "../../ui/Button"
 
 function Header({ onAddTask }) {
     const showToast = useToast()
@@ -27,23 +27,19 @@ function Header({ onAddTask }) {
             <header className="page-header">
                 <HeaderTitle name="John" />
                 <div className="btn-container">
-                    
-                    <HeaderBtn 
-                        style="outline" 
-                        icon="⚡" 
-                        id="openModalBtn" 
-                        text="Quick Add" 
+                    <Button 
+                        variant="outline"
+                        text="⚡ Quick Add"
+                        id="openModalBtn"
                         onClick={handleOpenQA}
                     />
                     
-                    <HeaderBtn 
-                        style="primary" 
-                        icon="🎉" 
-                        id="showToastDemo" 
-                        text="Demo Toast" 
+                    <Button 
+                        variant="primary"
+                        text="🎉 Demo Toast"
+                        id="showToastDemo"
                         onClick={handleDemoToast}
-                    />
-                    
+                    />                
                 </div>
             </header>
 

@@ -44,19 +44,19 @@ const navItems = [
                 "id": "Calendar",
                 "isActive": false,
                 "icon": "📅",
-                "title": "Calendar",
+                "title": "Calendar"
             },
             {
                 "id": "Messages",
                 "isActive": false,
                 "icon": "💬",
-                "title": "Messages",
+                "title": "Messages"
             },
             {
                 "id": "Files",
                 "isActive": false,
                 "icon": "📁",
-                "title": "Files",
+                "title": "Files"
             }
         ]
     },
@@ -67,16 +67,16 @@ const navItems = [
                 "id": "Settings",
                 "isActive": false,
                 "icon": "⚙️",
-                "title": "Settings",
+                "title": "Settings"
             },
             {
                 "id": "Logout",
                 "isActive": false,
                 "icon": "🚪",
-                "title": "Logout",
+                "title": "Logout"
             }
         ]
     }
-];
+]
 
-export default navItems;
+export default navItems

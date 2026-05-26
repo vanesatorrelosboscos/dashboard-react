@@ -1,18 +1,17 @@
 import tabsCardHeaderButtons from "./tabsCardHeaderButtons"
-import TabsBtn from "./TabsBtn"
+import Button from "../../../../ui/Button"
 
 function TabsCardHeader({ activeTab, onTabChange }) {
     return (
         <div className="card-header">
             <div className="tabs" id="mainTabs">
-                {tabsCardHeaderButtons.map((button) => (
-                    <TabsBtn
-                        key={`${button.tab}-tab`}
-                        tab={button.tab}
-                        isActive={button.tab === activeTab}
-                        icon={button.icon}
-                        label={button.label}
-                        onClick={onTabChange}
+                {tabsCardHeaderButtons.map(button => (
+                    <Button
+                        key={button.tab}
+                        variant="tab"
+                        className={button.tab === activeTab ? 'active' : ''}
+                        onClick={() => onTabChange(button.tab)} 
+                        text={button.text}
                     />
                 ))}
             </div>

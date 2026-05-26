@@ -1,4 +1,4 @@
-import FilterBtn from "./FilterBtn"
+import Button from "../../../../../../ui/Button"
 import AddToDo from "./AddToDo"
 import ToDoTask from "./ToDoTask"
 import TasksFooter from "./TasksFooter"
@@ -51,12 +51,12 @@ function TasksTab({ toDoList, setToDoList, isTabActive }) {
             <AddToDo onAdd={addTask} />
             <div className="todo-filters">
                 {filterButtons.map(btn => (
-                    <FilterBtn 
+                    <Button 
                         key={btn.filter}
-                        filter={btn.filter} 
-                        label={btn.label} 
-                        isActive={currentFilter === btn.filter} 
+                        variant="filter"
+                        className={currentFilter === btn.filter ? 'active' : ''}
                         onClick={() => setCurrentFilter(btn.filter)} 
+                        text={btn.label}
                     />
                 ))}
             </div>
