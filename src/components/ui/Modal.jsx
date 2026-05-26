@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
+import CardHeader from './card/CardHeader'
+import Button from './Button'
 
-function Modal({ isOpen, onClose, children }) {
+function Modal({ isOpen, onClose, children, title }) {
     useEffect(() => {
         if (!isOpen) return
 
@@ -25,6 +27,11 @@ function Modal({ isOpen, onClose, children }) {
     return (
         <div className="overlay" onClick={onClose} style={{ display: 'flex' }}>
             <div className="modal" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
+                <CardHeader 
+                    title={title}
+                    button={<Button variant="modalClose" text="✕" onClick={onClose} />} 
+                />
+    
                 {children}
             </div>
         </div>

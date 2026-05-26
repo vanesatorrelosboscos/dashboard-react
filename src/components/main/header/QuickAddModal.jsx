@@ -46,12 +46,8 @@ function QuickAddModal({ isOpen, onClose, onAddTask }) {
     }
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose}>
-            <div className="modal-header">
-                <span className="modal-title">⚡ Quick Add Task</span>
-                <Button variant="modalClose" text="✕" onClick={onClose} />
-            </div>
-            
+        <Modal isOpen={isOpen} onClose={onClose} title="⚡ Quick Add Task">
+
             <form className="modal-body" onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label className="form-label">Task Title</label>
