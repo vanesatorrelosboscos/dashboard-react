@@ -45,9 +45,7 @@ function AddToDo({ onAdd }) {
                     <AddToDoBtn />
                 </div>
             </form>
-            {showError && (
-                <InputError msg="⚠ Please enter a task name." className="todo-error"/>
-            )}
+            {showError && <InputError msg="⚠ Please enter a task name." className="todo-error"/>}
         </>
     )
 }

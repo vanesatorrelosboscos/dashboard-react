@@ -18,9 +18,7 @@ function FormInput({ label, type, id, placeholder, value, onChange, hasError, is
                     ✅
                 </span>
             </div>
-            {hasError && 
-                <InputError msg={errorMsg} />
-            }
+            {hasError && <InputError msg={errorMsg} />}
         </div>
     );
 }
