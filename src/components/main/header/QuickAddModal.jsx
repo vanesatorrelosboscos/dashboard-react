@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useToast } from '../../../context/ToastContext'
 import Button from '../../ui/Button'
+import Input from '../../ui/Input'
 
 function QuickAddModal({ isOpen, onClose, onAddTask }) {
     const showToast = useToast()
@@ -78,8 +79,13 @@ function QuickAddModal({ isOpen, onClose, onAddTask }) {
                 <form className="modal-body" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label className="form-label">Task Title</label>
-                        <input className="form-input" type="text" id="modalTaskInput" placeholder="What needs to be done?" value={title}
-                            onChange={(e) => setTitle(e.target.value)}/>
+                        <Input 
+                            className="form-input"
+                            id="modalTaskInput"
+                            placeholder="What needs to be done?"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                        />
                     </div>
                     <div className="modal-bottom">
                         <div className="form-group">

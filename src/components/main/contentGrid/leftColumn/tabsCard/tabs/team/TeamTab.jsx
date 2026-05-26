@@ -1,6 +1,7 @@
 import teamData from './teamData'
 import MemberCard from './MemberCard'
 import {useState} from 'react'
+import Input from '../../../../../../ui/Input'
 
 function TeamTab({isTabActive}) {
     const [searchMember, setSearchMember] = useState('')
@@ -12,11 +13,9 @@ function TeamTab({isTabActive}) {
 
     return (
         <div className={`tab-panel ${isTabActive ? 'active' : ''}`} id="tab-team">
-            <input 
-                type="text" 
-                id="teamSearch" 
-                autoComplete="off" 
-                placeholder="🔍 Search team members…" 
+            <Input 
+                id="teamSearch"
+                placeholder="🔍 Search team members…"
                 value={searchMember}
                 onChange={(e) => setSearchMember(e.target.value)}
             />

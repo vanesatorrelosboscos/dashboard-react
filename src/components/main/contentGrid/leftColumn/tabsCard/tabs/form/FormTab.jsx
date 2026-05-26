@@ -1,7 +1,6 @@
-import FormInput from './FormInput'
-import FormSelect from './FormSelect'
 import { useState } from 'react'
-import validateApplicationForm from './validateApplicationForm'
+import Input from '../../../../../../ui/Input'
+import FormSelect from './FormSelect'
 import { useToast } from '../../../../../../../context/ToastContext'
 import Button from '../../../../../../ui/Button'
 
@@ -14,30 +13,35 @@ function FormTab({ isTabActive }) {
         fdept: ''
     })
 
-    const [errors, setErrors] = useState({})
-    const [success, setSuccess] = useState({})
+    const [submitCount, setSubmitCount] = useState(0)
+    const [selectValidations, setSelectValidations] = useState({ hasError: false, isSuccess: false })
 
     const handleChange = (e) => {
         const { id, value } = e.target
         setFormData({ ...formData, [id]: value })
-        
-        setErrors(prev => ({ ...prev, [id]: false }))
-        setSuccess(prev => ({ ...prev, [id]: false }))
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-    
-        const { errors: newErrors, success: newSuccess, isValid } = validateApplicationForm(formData)
-        setErrors(newErrors)
-        setSuccess(newSuccess)
+        
+        const isNameValid = formData.fname.trim().length >= 2
+        const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.femail.trim())
+        const isPassValid = /^(?=.*[0-9]).{8,}$/.test(formData.fpass.trim())
+        const isDeptValid = formData.fdept !== ''
+
+        const isValid = isNameValid && isEmailValid && isPassValid && isDeptValid
 
         if (isValid) {
             showToast('Application submitted successfully! 🎉', "success", "Form submitted")
             setFormData({ fname: '', femail: '', fpass: '', fdept: '' })
-            setErrors({})
-            setSuccess({})
+            setSubmitCount(0)
+            setSelectValidations({ hasError: false, isSuccess: false })
         } else {
+            setSubmitCount(prev => prev + 1)
+            setSelectValidations({
+                hasError: !isDeptValid,
+                isSuccess: isDeptValid
+            })
             showToast('Please fix the errors above.', "error")
         }
     }
@@ -48,44 +52,47 @@ function FormTab({ isTabActive }) {
                 
                 <div className="form-group-container">
                     {/* 1. FULL NAME */}
-                    <FormInput 
+                    <Input 
                         label="Full Name"
                         type="text"
                         id="fname"
                         placeholder="Jane Doe"
                         value={formData.fname}
                         onChange={handleChange}
-                        hasError={errors.fname}
-                        isSuccess={success.fname}
+                        required={true}
+                        pattern={/^.{2,}$/}
                         errorMsg="Min. 2 characters required."
+                        submitCount={submitCount}
                     />
 
                     {/* 2. EMAIL ADDRESS */}
-                    <FormInput 
+                    <Input 
                         label="Email Address"
                         type="email"
                         id="femail"
                         placeholder="jane@nexus.io"
                         value={formData.femail}
                         onChange={handleChange}
-                        hasError={errors.femail}
-                        isSuccess={success.femail}
+                        required={true}
+                        pattern={/^[^\s@]+@[^\s@]+\.[^\s@]+$/}
                         errorMsg="Enter a valid email address."
+                        submitCount={submitCount}
                     />
                 </div>
 
                 <div className="form-group-container">
                     {/* 3. PASSWORD */}
-                    <FormInput 
+                    <Input 
                         label="Password"
                         type="password"
                         id="fpass"
                         placeholder="Min 8 chars + 1 number"
                         value={formData.fpass}
                         onChange={handleChange}
-                        hasError={errors.fpass}
-                        isSuccess={success.fpass}
+                        required={true}
+                        pattern={/^(?=.*[0-9]).{8,}$/}
                         errorMsg="Min 8 chars, at least 1 number."
+                        submitCount={submitCount}
                     />
 
                     {/* 4. DEPARTMENT */}
@@ -95,14 +102,13 @@ function FormTab({ isTabActive }) {
                         options={['Engineering', 'Design', 'Marketing', 'Operations']}
                         value={formData.fdept}
                         onChange={handleChange}
-                        hasError={errors.fdept}
-                        isSuccess={success.fdept}
+                        hasError={selectValidations.hasError}
+                        isSuccess={selectValidations.isSuccess}
                         errorMsg="Please select a department."
                     />
-
                 </div>
 
-                <Button type="submit" id="submitBtn" variant="primary" text="Submit Aplication →"/>
+                <Button type="submit" id="submitBtn" variant="primary" text="Submit Application →"/>
             </form>
         </div>
     )

@@ -1,6 +1,6 @@
 import { useState, useRef } from "react"
 import useShortcut from "../../../../../../../hooks/useShortcut"
-import ToDoInput from "./ToDoInput"
+import Input from "../../../../../../ui/Input"
 import Button from "../../../../../../ui/Button"
 import InputError from "../../../../../../ui/InputError"
 
@@ -37,7 +37,9 @@ function AddToDo({ onAdd }) {
         <>
             <form onSubmit={handleSubmit}>
                 <div className="todo-input-row">
-                    <ToDoInput 
+                    <Input 
+                        id="todoInput"
+                        placeholder="Add a new task… (Ctrl+M)"
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
                         inputRef={taskInputRef}
