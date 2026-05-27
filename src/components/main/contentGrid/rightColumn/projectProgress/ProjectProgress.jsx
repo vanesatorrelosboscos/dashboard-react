@@ -9,7 +9,7 @@ function ProjectProgress(){
         <Card>
             <CardHeader 
                 title = "📈 Project Progress"
-                className = "badge badge-warning"
+                badge = "warning"
                 text = "Q1 2026"
             />
             <CardBody>
