@@ -1,0 +1,35 @@
+import Card from "../../molecules/card/Card"
+import CardBody from "../../molecules/card/CardBody"
+import CardHeader from "../../molecules/card/CardHeader"
+import DragPriority from "../../molecules/DragPriority"
+import useDragReorder from "../../../hooks/useDragReorder"
+
+function SprintPriorities({ sprintTasks, setSprintTasks}){
+    const handleDrop = useDragReorder(sprintTasks, setSprintTasks, 'custom/sprint-id')
+
+    return (
+        <Card>
+            <CardHeader 
+                title = "🎯 Sprint Priorities"
+                className = "drag-text"
+                text = "Drag to reorder"
+            />
+            <CardBody>
+                <div className="drag-list" id="dragList">
+                    {sprintTasks.map(item => (
+                        <DragPriority 
+                            key={item.id}
+                            id={item.id}
+                            text={item.text}
+                            tag={item.tag}
+                            priority={item.priority}
+                            onDrop={(e) => handleDrop(e, item.id)}
+                        />
+                    ))}
+                </div>
+            </CardBody>
+        </Card>
+    )
+}
+
+export default SprintPriorities

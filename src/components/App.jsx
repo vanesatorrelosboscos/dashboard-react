@@ -1,7 +1,7 @@
 import { useState } from "react"
-import NavBar from "./navbar/NavBar"
-import SideBar from "./sidebar/SideBar"
-import MainContent from "./main/MainContent"
+import NavBar from "./organisms/NavBar"
+import SideBar from "./organisms/SideBar"
+import MainContent from "./templates/MainContent"
 
 function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)

@@ -1,0 +1,40 @@
+import teamData from "../../../constants/teamData"
+import MemberCard from '../../molecules/tabs/MemberCard'
+import {useState} from 'react'
+import Input from "../../atoms/input/Input"
+
+function TeamTab({isTabActive}) {
+    const [searchMember, setSearchMember] = useState('')
+
+    const filteredTeam = teamData.filter(member => 
+        member.name.toLowerCase().includes(searchMember.toLowerCase()) ||
+        member.role.toLowerCase().includes(searchMember.toLowerCase())
+    )
+
+    return (
+        <div className={`tab-panel ${isTabActive ? 'active' : ''}`} id="tab-team">
+            <Input 
+                id="teamSearch"
+                placeholder="🔍 Search team members…"
+                value={searchMember}
+                onChange={(e) => setSearchMember(e.target.value)}
+            />
+            <div className="team-grid" id="teamGrid">
+                {filteredTeam.map(member => (
+                    <MemberCard
+                        key={crypto.randomUUID()}
+                        name={member.name}
+                        role={member.role}
+                        status={member.status}
+                        color={member.color}
+                    />
+                ))}
+            </div>
+            {filteredTeam.length === 0 && (
+                <div className="no-results" id="teamNoResults">😕 No team members found.</div>
+            )}
+        </div>
+    )
+}
+
+export default TeamTab
