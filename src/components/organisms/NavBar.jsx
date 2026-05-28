@@ -21,9 +21,11 @@ function NavBar({ onToggleMenu }) {
 
     useEffect(() => {
         if (isLightMode) {
+            document.documentElement.classList.add("light-mode")
             document.body.classList.add("light-mode")
             localStorage.setItem("theme", "light")
         } else {
+            document.documentElement.classList.remove("light-mode")
             document.body.classList.remove("light-mode")
             localStorage.setItem("theme", "dark")
         }
@@ -31,8 +33,10 @@ function NavBar({ onToggleMenu }) {
 
     const handleThemeToggle = (e) => {
         e?.currentTarget?.blur?.()
-        setIsLightMode(!isLightMode)
-        showToast(`Theme switched to ${isLightMode ? 'dark' : 'light'} mode`, "info")
+        
+        const nextMode = !isLightMode
+        setIsLightMode(nextMode)
+        showToast(`Theme switched to ${nextMode ? 'light' : 'dark'} mode`, "info")
     }
     
     const handleShortcutsOpen = (e) => {
@@ -48,21 +52,18 @@ function NavBar({ onToggleMenu }) {
     const NAVBAR_BUTTONS = [
         {
             "id": "themeToggle",
-            "className": "icon-btn",
             "title": "Toggle theme",
             "icon": "🌙",
             "onclick": handleThemeToggle
         },
         {
             "id": "shortcutsBtn",
-            "className": "icon-btn",
             "title": "Keyboard shortcuts (Ctrl+/)",
             "icon": "⌨️",
             "onclick": handleShortcutsOpen
         },
         {
             "id": "notifBtn",
-            "className": "icon-btn",
             "title": "Notifications",
             "icon": "🔔",
             "onclick": handleNotifClick
@@ -83,10 +84,10 @@ function NavBar({ onToggleMenu }) {
                     {NAVBAR_BUTTONS.map(btn => (
                         <Button 
                             key={btn.id}
-                            id={btn.id}
                             title={btn.title}
                             text={btn.icon}
                             onClick={btn.onclick}
+                            variant="icon"
                         />
                     ))}
 

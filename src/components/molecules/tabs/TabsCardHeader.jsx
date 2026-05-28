@@ -9,7 +9,7 @@ function TabsCardHeader({ activeTab, onTabChange }) {
                     <Button
                         key={button.tab}
                         variant="tab"
-                        className={button.tab === activeTab ? 'active' : ''}
+                        isActive={button.tab === activeTab}
                         onClick={() => onTabChange(button.tab)} 
                         text={button.text}
                     />

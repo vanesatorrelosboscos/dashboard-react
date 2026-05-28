@@ -8,7 +8,7 @@ function App() {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
     return (
-        <div className="app">
+        <div className="grid grid-cols-[260px_1fr] grid-rows-[auto_1fr] min-h-screen">
             <NavBar onToggleMenu={toggleMenu} />
             <SideBar isMenuOpen={isMenuOpen} />
             <MainContent /> 

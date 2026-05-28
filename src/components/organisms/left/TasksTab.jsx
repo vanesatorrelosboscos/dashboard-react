@@ -54,7 +54,7 @@ function TasksTab({ toDoList, setToDoList, isTabActive }) {
                     <Button 
                         key={btn.filter}
                         variant="filter"
-                        className={currentFilter === btn.filter ? 'active' : ''}
+                        isActive={currentFilter === btn.filter}
                         onClick={() => setCurrentFilter(btn.filter)} 
                         text={btn.label}
                     />

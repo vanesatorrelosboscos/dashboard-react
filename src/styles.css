@@ -29,18 +29,6 @@ body.light-mode {
 }
 
 /* ────────────────── GLOBAL STYLES ────────────────── */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.app{
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    grid-template-rows: auto 1fr;
-    min-height: 100vh;
-}
 
 body {
     font-family: 'Inter', sans-serif;
@@ -163,26 +151,6 @@ body {
     color: var(--muted);
     font-size: 12px;
     border: none;
-}
-
-#themeToggle, #shortcutsBtn, #notifBtn {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 18px;
-    padding: 6px 12px;
-    border-radius: var(--radius);
-    height: 38px;
-    width: 38px;
-    background-color: var(--surface2);
-    justify-content: center;
-    display: flex;
-    align-items: center;
-}
-
-#themeToggle:hover, #shortcutsBtn:hover, #notifBtn:hover {
-    border-color: var(--primary);
-    cursor: pointer;
 }
 
 .avatar {
@@ -323,17 +291,6 @@ body {
     gap: 6px;
 }
 
-.btn-outline{
-    border: 1px solid var(--border);
-    background-color: transparent;
-    transition: var(--transition);
-}
-
-.btn-outline:hover{
-    border: 1px solid var(--primary);
-    color: var(--primary);
-}
-
 #modalAddBtn{
     width: 100%;
     padding: 12px;
@@ -456,29 +413,6 @@ body {
     border-radius: var(--radius);
 }
 
-.tab-btn{
-    display: flex;
-    flex-direction: column;
-    background-color: transparent;
-    border-radius: var(--radius);
-    border: none;
-    padding: 8px 18px;
-    color: var(--muted);
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.tab-btn.active{
-    color: var(--text);
-    background-color: var(--surface);
-}
-
-.tab-btn:hover{
-    color: var(--text);
-}
-
 .card-body{
     padding: 20px 22px;
 }
@@ -520,17 +454,6 @@ body {
     outline: none;
 }
 
-.btn-primary{
-    background-color: var(--primary);
-    color: white;
-    border: none;
-    transition: var(--transition);
-}
-
-.btn-primary:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(79,70,229,0.35);
-}
 .todo-error{
     color: var(--danger);
     font-size: 12px;
@@ -541,28 +464,6 @@ body {
     display: flex;
     gap: 6px;
     margin-bottom: 12px;
-}
-
-.filter-btn{
-    padding: 4px 14px;
-    border-radius: 6px;
-    background-color: transparent;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 12px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.filter-btn:hover{
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
-.filter-btn.active{
-    background-color: var(--primary);
-    color: white;
-    border-color: var(--primary);
 }
 
 .todo-list {
@@ -783,10 +684,7 @@ body {
 }
 
 /* ────────────────── FORM ────────────────── */
-.form-group{
-    margin-bottom: 16px;
-    position: relative;
-}
+
 
 .form-label{
     font-size: 13px;
@@ -897,22 +795,6 @@ body {
     gap: 8px;
     justify-content: center;
     margin-top: 10px;
-}
-
-.preset-btn{
-    background-color: transparent;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 7px;
-    transition: var(--transition);
-}
-
-.preset-btn:hover{
-    border-color: var(--primary);
-    color: var(--primary);
-    cursor: pointer;
 }
 
 .timer-controls .btn {
@@ -1060,23 +942,6 @@ body {
     padding: 12px;
 }
 
-.modal-close{
-    background: none;
-    border: none;
-    font-size: 18px;
-    color: var(--muted);
-    cursor: pointer;
-    padding: 2px 8px;
-    border-radius: 8px;
-    user-select: none;
-    transition: var(--transition);
-}
-
-.modal-close:hover{
-    background-color: var(--surface2);
-    color: var(--text);
-}
-
 
 /**─────────────────── TOAST NOTIFICATIONS ────────────────── */
 .toast-container{
@@ -1203,18 +1068,7 @@ canvas { display: block; width: 100%; }
         grid-template-columns: 1fr;
     }
 
-    .sidebar-overlay {
-        position: fixed;
-        background-color: rgba(0, 0, 0, 0.5);
-        width: 100vw;
-        height: 100vh;
-        left: 0;
-        top: 0;
-        z-index: 90;
-        opacity: 0;
-        visibility: hidden; 
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
+
 
     .sidebar {
         position: fixed; 
