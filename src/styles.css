@@ -454,12 +454,6 @@ body {
     outline: none;
 }
 
-.todo-error{
-    color: var(--danger);
-    font-size: 12px;
-    margin: -10px 0 8px;
-}
-
 .todo-filters{
     display: flex;
     gap: 6px;
@@ -684,14 +678,6 @@ body {
 }
 
 /* ────────────────── FORM ────────────────── */
-
-
-.form-label{
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
 #submitBtn{
     width: 100%;
     margin-top: 10px;
@@ -699,55 +685,6 @@ body {
     font-weight: 700;
     font-size: 14px;
 }
-
-.form-input{
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background-color: var(--surface2);
-    color: var(--text);
-    font-size: 14px;
-    outline: none;
-    margin-bottom: -10px;
-    transition: var(--transition);
-}
-
-.form-input:focus{
-    border-color: var(--primary);
-}
-
-.form-input.valid {
-    border-color: var(--success);
-}
-
-.form-input.invalid {
-    border-color: var(--danger);
-}
-
-.form-success-icon{
-    position: absolute;
-    right: 15px;
-    top: 33px;
-    font-size: 14px;
-}
-
-.form-error{
-    font-size: 11px;
-    color: var(--danger);
-    position: relative;
-    left: 3px;
-    margin-top: 10px;
-    margin-bottom: -10px;
-}
-
-
-.form-group-container{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-}
-
 
 
 /* ────────────────── TIMER CARD ────────────────── */

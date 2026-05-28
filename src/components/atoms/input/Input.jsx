@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import InputError from './InputError'
 
 function Input({ 
     id, 
@@ -34,6 +35,14 @@ function Input({
         }
     }, [submitCount, required, pattern])
 
+    const baseInputClass = "w-full p-2.5 rounded-[10px] border border-solid bg-[var(--surface2)] text-[var(--text)] text-sm outline-none -mb-2.5 transition-all duration-300 ease-in-out focus:border-[var(--primary)]"
+
+    const statusClass = showError 
+        ? 'border-[var(--danger)]' 
+        : isSuccess 
+            ? 'border-[var(--success)]' 
+            : 'border-[var(--border)]'
+
     const inputElement = (
         <input
             id={id}
@@ -43,22 +52,22 @@ function Input({
             placeholder={placeholder}
             autoComplete="off"
             ref={inputRef}
-            className={`${label ? 'form-input' : ''} ${className} ${showError ? 'invalid' : isSuccess ? 'valid' : ''}`}
+            className={`${label ? baseInputClass : ''} ${statusClass} ${className}`.trim()}
         />
     )
 
     if (!label) return inputElement 
 
     return (
-        <div className="form-group">
+        <div className="mb-4 relative">
             <label htmlFor={id} className="form-label">{label}</label>
             
-            <div className="field-wrap">
+            <div>
                 {inputElement}
-                {isSuccess && <span className="form-success-icon">✅</span>}
+                {isSuccess && <span className="absolute right-3.5 top-8.25 text-sm">✅</span>}
             </div>
             
-            {showError && <div className="form-error">{errorMsg}</div>}
+            {showError && <InputError msg={errorMsg} className="text-[11px] relative left-0.75 mt-2.5 -mb-2.5"/>}
         </div>
     )
 }

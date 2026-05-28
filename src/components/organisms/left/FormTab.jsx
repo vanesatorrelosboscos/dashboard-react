@@ -58,7 +58,7 @@ function FormTab({ isTabActive }) {
         <div className={`tab-panel ${isTabActive ? 'active' : ''}`} id="tab-form">
             <form id="contactForm" onSubmit={handleSubmit} noValidate>
                 
-                <div className="form-group-container">
+                <div className="grid grid-cols-2 gap-3.5">
                     {/* 1. FULL NAME */}
                     <Input 
                         label="Full Name"
@@ -88,7 +88,7 @@ function FormTab({ isTabActive }) {
                     />
                 </div>
 
-                <div className="form-group-container">
+                <div className="grid grid-cols-2 gap-3.5">
                     {/* 3. PASSWORD */}
                     <Input 
                         label="Password"

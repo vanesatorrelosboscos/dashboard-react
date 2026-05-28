@@ -1,10 +1,20 @@
+import InputError from "./input/InputError"
+
 function Select({ label, id, options = [], value, onChange, hasError, isSuccess, errorMsg, placeholder }) {
+    const baseSelectClass = "w-full p-2.5 rounded-[10px] border border-solid bg-[var(--surface2)] text-[var(--text)] text-sm outline-none -mb-2.5 transition-all duration-300 ease-in-out focus:border-[var(--primary)] appearance-none"
+
+    const statusClass = hasError 
+        ? 'border-[var(--danger)]' 
+        : isSuccess 
+            ? 'border-[var(--success)]' 
+            : 'border-[var(--border)]'
+
     return (
-        <div className="form-group">
+        <div className="mb-4 relative">
             {label && <label className="form-label" htmlFor={id}>{label}</label>}
             <div className="field-wrap">
                 <select 
-                    className={`form-input ${hasError ? 'invalid' : isSuccess ? 'valid' : ''}`.trim()} 
+                    className={`${baseSelectClass} ${statusClass}`} 
                     id={id}
                     value={value}
                     onChange={onChange}
@@ -22,9 +32,14 @@ function Select({ label, id, options = [], value, onChange, hasError, isSuccess,
                         )
                     })}
                 </select>
-                {isSuccess && <span className="form-success-icon">✅</span>}
+                {isSuccess && <span className="absolute right-3.5 top-8.25 text-sm">✅</span>}
             </div>
-            {hasError && <div className="form-error">{errorMsg}</div>}
+            {hasError && (
+                <InputError 
+                    msg={errorMsg} 
+                    className="text-[11px] relative left-0.75 mt-2.5 -mb-2.5" 
+                />
+            )}
         </div>
     )
 }
