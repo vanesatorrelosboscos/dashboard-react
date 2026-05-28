@@ -60,7 +60,7 @@ function Input({
 
     return (
         <div className="mb-4 relative">
-            <label htmlFor={id} className="form-label">{label}</label>
+            <label htmlFor={id} className="block text-[13px] font-semibold mb-1.5">{label}</label>
             
             <div>
                 {inputElement}
