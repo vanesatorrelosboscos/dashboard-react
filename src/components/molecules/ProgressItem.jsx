@@ -12,13 +12,13 @@ function ProgressItem({ name, pct, color }) {
     }, [pct])
 
     return (
-        <div className="progress-item">
-            <label>
-                {name}<span>{pct}%</span>
+        <div>
+            <label className="flex justify-between text-[13px] font-medium">
+                {name}<span className="text-(--muted)">{pct}%</span>
             </label>
-            <div className="progress-track">
+            <div className="mt-0.5 bg-(--surface2) h-2 rounded-full">
                 <div 
-                    className="progress-fill" 
+                    className="h-full rounded-full [transition:width_1.5s_cubic-bezier(0.4,0,0.2,1)]" 
                     style={{ 
                         background: color,
                         width: `${currentWidth}%`, 
@@ -27,7 +27,7 @@ function ProgressItem({ name, pct, color }) {
                 ></div>
             </div>
         </div>
-    );
+    )
 }
 
 export default ProgressItem
