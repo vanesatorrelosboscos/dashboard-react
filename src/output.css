@@ -228,6 +228,9 @@
   .z-40 {
     z-index: 40;
   }
+  .-mt-1 {
+    margin-top: calc(var(--spacing) * -1);
+  }
   .-mt-2\.5 {
     margin-top: calc(var(--spacing) * -2.5);
   }
@@ -437,6 +440,9 @@
   }
   .rounded-\[7px\] {
     border-radius: 7px;
+  }
+  .rounded-\[8px\] {
+    border-radius: 8px;
   }
   .rounded-\[10px\] {
     border-radius: 10px;
@@ -702,6 +708,13 @@
   .text-\[18px\] {
     font-size: 18px;
   }
+  .text-\[26px\] {
+    font-size: 26px;
+  }
+  .font-\[800\] {
+    --tw-font-weight: 800;
+    font-weight: 800;
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -818,6 +831,9 @@
   .select-none {
     -webkit-user-select: none;
     user-select: none;
+  }
+  .\[transition\:var\(--transition\)\] {
+    transition: var(--transition);
   }
   .last\:border-b-0 {
     &:last-child {

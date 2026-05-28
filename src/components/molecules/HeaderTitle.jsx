@@ -19,8 +19,12 @@ function HeaderTitle({name}) {
 
     return (
         <div>
-            <h1 className="page-title">{greeting}, <span>{name}</span> 👋</h1>
-            <p className="page-sub">{date} · Here's what's happening today.</p>
+            <h1 className="text-[26px] font-extrabold tracking-[-0.5px]">
+                {greeting}, <span className="text-(--primary)">{name}</span> 👋
+            </h1>
+            <p className="text-(--muted) text-[14px] -mt-1">
+                {date} · Here's what's happening today.
+            </p>
         </div>
     )
 }
