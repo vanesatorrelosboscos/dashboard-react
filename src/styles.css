@@ -153,21 +153,6 @@ body {
     border: none;
 }
 
-.avatar {
-    min-width: 38px;
-    min-height: 38px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    display: flex;
-    font-weight: 800;
-    font-size: 14px;
-    color: white;
-    border: 2px solid var(--primary);
-    cursor: pointer;
-}
-
 /* ────────────────── SIDEBAR ────────────────── */
 .sidebar {
     grid-column: 1;
