@@ -1,4 +1,5 @@
 const BADGE_BASE = "py-[3px] px-2.5 rounded-full text-[11px] font-bold tracking-[0.3px]"
+
 const BADGE_VARIANTS = {
     primary: "bg-(--primary)/15 text-(--primary)",
     success: "bg-(--success)/15 text-(--success)",

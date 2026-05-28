@@ -14,7 +14,9 @@ function App() {
             <MainContent /> 
 
             <div 
-                className={`sidebar-overlay ${isMenuOpen ? 'active' : ''}`} 
+                className={`fixed inset-0 bg-black/50 transition-all duration-300 ease-in-out z-40 ${
+                    isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+                }`} 
                 onClick={toggleMenu}
             ></div>
         </div>
