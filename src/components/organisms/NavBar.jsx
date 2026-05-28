@@ -12,9 +12,7 @@ function NavBar({ onToggleMenu }) {
 
     const [isLightMode, setIsLightMode] = useState(() => {
         const savedTheme = localStorage.getItem("theme")
-        if (savedTheme === 'light') return true
-        if (savedTheme === 'dark') return false
-        return window.matchMedia('(prefers-color-scheme: light)').matches
+        return savedTheme ? (savedTheme === 'light') : window.matchMedia('(prefers-color-scheme: light)').matches
     })
 
     const [isShortcutsOpen, setIsShortcutsOpen] = useState(false)
