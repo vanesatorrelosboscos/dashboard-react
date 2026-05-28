@@ -128,59 +128,6 @@ body {
     padding: 10px 4px 0 10px;
 }
 
-.nav-item {
-    display: flex;
-    align-items: center;
-    border-radius: var(--radius);
-    transition: var(--transition);
-    color: var(--muted);
-    font-size: 14px;
-    height: 40.5px;
-    width: 227px;
-    padding: 8px 14px;
-    font-weight: 500;
-   
-}
-
-.nav-item:hover {
-    cursor: pointer;
-    background-color: var(--surface2);
-    color: var(--text);
-}
-
-.nav-item.active {
-    background-color: rgba(79,70,229,0.15);
-    color: var(--primary);
-}
-
-.nav-icon{
-    width: 20px;
-    height: 20px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-}
-
-.nav-badge{
-    background-color: var(--primary);
-    color: white;
-    font-size: 10px;
-    padding: 2px 6px;
-    border-radius: 20px;
-    margin-left: auto;
-    font-weight: 700;
-    width: 21px;
-    height: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.green{
-    background-color: var(--success);
-}
-
 /* ────────────────── MAIN CONTENT ────────────────── */
 .main {
     grid-column: 2;
