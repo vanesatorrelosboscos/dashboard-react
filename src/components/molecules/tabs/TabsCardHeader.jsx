@@ -3,7 +3,7 @@ import Button from "../../atoms/Button"
 
 function TabsCardHeader({ activeTab, onTabChange }) {
     return (
-        <div className="card-header">
+        <div className="flex justify-between items-center pt-4.5 px-5.5 pb-3.5 border-b border-solid border-(--border)">
             <div className="tabs" id="mainTabs">
                 {tabsCardHeaderButtons.map(button => (
                     <Button
