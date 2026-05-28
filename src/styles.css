@@ -363,16 +363,6 @@ body {
     gap: 10px;
 }
 
-.shortcut-item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-    background-color: var(--surface2);
-    border-radius: var(--radius);
-    padding: 12px;
-}
-
 
 /**─────────────────── TOAST NOTIFICATIONS ────────────────── */
 .toast-container{
