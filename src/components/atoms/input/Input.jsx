@@ -60,11 +60,11 @@ function Input({
 
     return (
         <div className="mb-4 relative">
-            <label htmlFor={id} className="block text-[13px] font-semibold mb-1.5">{label}</label>
+            <label htmlFor={id} className="block text-[12px] font-semibold">{label}</label>
             
             <div>
                 {inputElement}
-                {isSuccess && <span className="absolute right-3.5 top-8.25 text-sm">✅</span>}
+                {isSuccess && <span className="absolute right-3.5 top-7">✅</span>}
             </div>
             
             {showError && <InputError msg={errorMsg} className="text-[11px] relative left-0.75 mt-2.5 -mb-2.5"/>}

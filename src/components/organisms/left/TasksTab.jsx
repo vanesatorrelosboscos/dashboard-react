@@ -14,7 +14,7 @@ function TasksTab({ toDoList, setToDoList, isTabActive }) {
             text,
             completed: false
         }
-        setToDoList([newTask, ...toDoList ])
+        setToDoList([newTask, ...toDoList])
     }
 
     function toggleTaskCompletion(id) {
@@ -39,17 +39,15 @@ function TasksTab({ toDoList, setToDoList, isTabActive }) {
     ]
 
     const filteredTasks = toDoList.filter(task => {
-        if (currentFilter === "active")  return !task.completed
+        if (currentFilter === "active") return !task.completed
         if (currentFilter === "completed") return task.completed
-    
         return true
     })
 
-
     return (
-        <div className={`tab-panel ${isTabActive ? 'active' : ''}`} id="tab-tasks">
+        <div className={`${isTabActive ? 'block' : 'hidden'} flex flex-col gap-3`}>
             <AddToDo onAdd={addTask} />
-            <div className="todo-filters">
+            <div className="flex gap-1.5">
                 {filterButtons.map(btn => (
                     <Button 
                         key={btn.filter}
@@ -60,7 +58,7 @@ function TasksTab({ toDoList, setToDoList, isTabActive }) {
                     />
                 ))}
             </div>
-            <div className="todo-list" id="todoList">
+            <div className="flex flex-col gap-2">
                 {filteredTasks.map(task => (
                     <ToDoTask 
                         key={task.id}

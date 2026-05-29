@@ -11,7 +11,7 @@ function Select({ label, id, options = [], value, onChange, hasError, isSuccess,
 
     return (
         <div className="mb-4 relative">
-            {label && <label className="block text-[13px] font-semibold mb-1.5" htmlFor={id}>{label}</label>}
+            {label && <label className="block text-[13px] font-semibold" htmlFor={id}>{label}</label>}
             <div>
                 <select 
                     className={`${baseSelectClass} ${statusClass}`} 

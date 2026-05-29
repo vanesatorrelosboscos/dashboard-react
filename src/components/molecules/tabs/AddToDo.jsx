@@ -36,7 +36,7 @@ function AddToDo({ onAdd }) {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <div className="flex gap-2 mb-4">
+                <div className="flex gap-2">
                     <Input 
                         placeholder="Add a new task… (Ctrl+M)"
                         value={inputValue}

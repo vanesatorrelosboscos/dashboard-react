@@ -55,11 +55,10 @@ function FormTab({ isTabActive }) {
     }
 
     return (
-        <div className={`tab-panel ${isTabActive ? 'active' : ''}`} id="tab-form">
+        <div className={isTabActive ? 'block' : 'hidden'} id="tab-form">
             <form id="contactForm" onSubmit={handleSubmit} noValidate>
                 
                 <div className="grid grid-cols-2 gap-3.5">
-                    {/* 1. FULL NAME */}
                     <Input 
                         label="Full Name"
                         type="text"
@@ -72,8 +71,6 @@ function FormTab({ isTabActive }) {
                         errorMsg="Min. 2 characters required."
                         submitCount={submitCount}
                     />
-
-                    {/* 2. EMAIL ADDRESS */}
                     <Input 
                         label="Email Address"
                         type="email"
@@ -89,7 +86,6 @@ function FormTab({ isTabActive }) {
                 </div>
 
                 <div className="grid grid-cols-2 gap-3.5">
-                    {/* 3. PASSWORD */}
                     <Input 
                         label="Password"
                         type="password"
@@ -102,8 +98,6 @@ function FormTab({ isTabActive }) {
                         errorMsg="Min 8 chars, at least 1 number."
                         submitCount={submitCount}
                     />
-
-                    {/* 4. DEPARTMENT */}
                     <Select 
                         label="Department"
                         id="fdept"

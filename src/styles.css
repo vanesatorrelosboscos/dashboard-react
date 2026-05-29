@@ -207,46 +207,6 @@ body {
     display: block;
 }
 
-/* ────────────────── TASKS ────────────────── */
-.todo-filters{
-    display: flex;
-    gap: 6px;
-    margin-bottom: 12px;
-}
-
-.todo-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-/* ────────────────── TEAM SEARCH ────────────────── */
-.team-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.no-results{
-    text-align: center;
-    color: var(--muted);
-    font-size: 14px;
-    padding: 16px 0 11px;
-}
-
-#teamSearch{
-    width:100%;
-    background:var(--surface2);
-    border:1px solid var(--border);
-    border-radius:10px;
-    padding:9px 14px;
-    color:var(--text);
-    font-size:14px;
-    outline:none;
-    margin-bottom:14px;
-    font-family:inherit;
-}
-
 /* ────────────────── FORM ────────────────── */
 #submitBtn{
     width: 100%;

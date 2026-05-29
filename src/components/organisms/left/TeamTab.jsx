@@ -12,14 +12,15 @@ function TeamTab({isTabActive}) {
     )
 
     return (
-        <div className={`tab-panel ${isTabActive ? 'active' : ''}`} id="tab-team">
+        <div className={isTabActive ? 'block' : 'hidden'}>
             <Input 
                 id="teamSearch"
                 placeholder="🔍 Search team members…"
                 value={searchMember}
                 onChange={(e) => setSearchMember(e.target.value)}
+                className="w-full bg-(--surface2) border border-solid border-(--border) rounded-[10px] px-3.5 py-2.25 text-(--text) text-sm outline-none mb-3.5 font-[inherit]"
             />
-            <div className="team-grid" id="teamGrid">
+            <div className="grid grid-cols-2 gap-2.5">
                 {filteredTeam.map(member => (
                     <MemberCard
                         key={crypto.randomUUID()}
@@ -31,7 +32,9 @@ function TeamTab({isTabActive}) {
                 ))}
             </div>
             {filteredTeam.length === 0 && (
-                <div className="no-results" id="teamNoResults">😕 No team members found.</div>
+                <div className="text-center text-(--muted) text-sm pt-4 pb-2.75">
+                    😕 No team members found.
+                </div>
             )}
         </div>
     )
