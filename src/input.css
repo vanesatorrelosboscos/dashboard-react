@@ -50,4 +50,40 @@
         --border: rgba(0,0,0,0.08);
         --shadow: 0 4px 24px rgba(0,0,0,0.1);
     }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--surface);
+    }
+}
+
+@keyframes toastIn {
+    from { transform: translateX(110%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes toastOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(110%); opacity: 0; }
+}
+
+@keyframes shrink {
+    from { width: 100%; }
+    to { width: 0%; }
 }

@@ -14,7 +14,7 @@ function Logo({ onHamburgerClick }) {
                 N
             </div>
             
-            <div className="text-[18px] font-bold tracking-[-0.5px]">
+            <div className="text-[18px] font-bold tracking-[-0.5px] max-[670px]:hidden">
                 Nexus<span className="text-(--primary)">Corp</span>
             </div>
         </div>

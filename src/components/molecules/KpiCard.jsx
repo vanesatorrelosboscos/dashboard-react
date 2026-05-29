@@ -53,7 +53,7 @@ function KpiCard({ icon, label, target, prefix = '', suffix = '', change, change
   }
 
   return (
-    <div className={`relative flex flex-col p-5 bg-(--surface) rounded-(--radius) border border-solid border-(--border) shadow-theme h-32.5 overflow-hidden transition-(--transition) hover:-translate-y-0.75 ${themeStyles[theme] || ''}`}>
+    <div className={`relative flex flex-col p-5 bg-(--surface) rounded-(--radius) border border-solid border-(--border) shadow-theme h-32.5 overflow-hidden transition-(--transition) hover:-translate-y-0.75 max-[500px]:p-2.5 ${themeStyles[theme] || ''}`}>
       <div className="absolute top-5 right-5 size-9 text-[36px] flex justify-center items-center opacity-15">
         {icon}
       </div>

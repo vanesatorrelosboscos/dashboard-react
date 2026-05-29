@@ -57,8 +57,7 @@ function FormTab({ isTabActive }) {
     return (
         <div className={isTabActive ? 'block' : 'hidden'} id="tab-form">
             <form id="contactForm" onSubmit={handleSubmit} noValidate>
-                
-                <div className="grid grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-2 gap-3.5 max-[670px]:grid-cols-1 max-[670px]:gap-0">
                     <Input 
                         label="Full Name"
                         type="text"
@@ -85,7 +84,7 @@ function FormTab({ isTabActive }) {
                     />
                 </div>
 
-                <div className="grid grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-2 gap-3.5 max-[670px]:grid-cols-1 max-[670px]:gap-0">
                     <Input 
                         label="Password"
                         type="password"
@@ -111,7 +110,7 @@ function FormTab({ isTabActive }) {
                     />
                 </div>
 
-                <Button type="submit" id="submitBtn" variant="primary" text="Submit Application →"/>
+                <Button type="submit" variant="primary" className="w-full mt-2.5 py-2.5! px-5! font-bold! text-sm!" text="Submit Application →"/>
             </form>
         </div>
     )
