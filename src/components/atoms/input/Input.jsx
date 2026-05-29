@@ -35,8 +35,7 @@ function Input({
         }
     }, [submitCount, required, pattern])
 
-    const baseInputClass = "w-full p-2.5 rounded-[10px] border border-solid bg-[var(--surface2)] text-[var(--text)] text-sm outline-none -mb-2.5 transition-all duration-300 ease-in-out focus:border-[var(--primary)]"
-
+    const baseInputClass = `w-full p-2.5 rounded-[10px] border border-solid bg-[var(--surface2)] text-[var(--text)] text-sm outline-none -mb-2.5 transition-all duration-300 ease-in-out ${!showError && !isSuccess ? 'focus:border-[var(--primary)]' : ''}`
     const statusClass = showError 
         ? 'border-[var(--danger)]' 
         : isSuccess 

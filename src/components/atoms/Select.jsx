@@ -1,8 +1,7 @@
 import InputError from "./input/InputError"
 
 function Select({ label, id, options = [], value, onChange, hasError, isSuccess, errorMsg, placeholder }) {
-    const baseSelectClass = "w-full p-2.5 rounded-[10px] border border-solid bg-[var(--surface2)] text-[var(--text)] text-sm outline-none -mb-2.5 transition-all duration-300 ease-in-out focus:border-[var(--primary)] appearance-none"
-
+    const baseSelectClass = `w-full p-2.5 rounded-[10px] border border-solid bg-[var(--surface2)] text-[var(--text)] text-sm outline-none -mb-2.5 transition-all duration-300 ease-in-out appearance-none pr-8 ${!hasError && !isSuccess ? 'focus:border-[var(--primary)]' : ''}`
     const statusClass = hasError 
         ? 'border-[var(--danger)]' 
         : isSuccess 
@@ -12,7 +11,7 @@ function Select({ label, id, options = [], value, onChange, hasError, isSuccess,
     return (
         <div className="mb-4 relative">
             {label && <label className="block text-[13px] font-semibold" htmlFor={id}>{label}</label>}
-            <div>
+            <div className="relative">
                 <select 
                     className={`${baseSelectClass} ${statusClass}`} 
                     id={id}
@@ -32,7 +31,10 @@ function Select({ label, id, options = [], value, onChange, hasError, isSuccess,
                         )
                     })}
                 </select>
-                {isSuccess && <span className="absolute right-3.5 top-8.25 text-sm">✅</span>}
+                {isSuccess 
+                    ? <span className="absolute right-3.5 top-2">✅</span>
+                    : <span className="absolute right-3.5 top-3.5 text-(--muted) pointer-events-none text-[10px]">▼</span>
+                }
             </div>
             {hasError && (
                 <InputError 

@@ -2,8 +2,7 @@ function Logo({ onHamburgerClick }) {
     return (
         <div className="flex items-center gap-2.5 text-2xl font-semibold text-(--text)">
             <button 
-                className="hidden max-[670px]:flex flex-col cursor-pointer bg-transparent border-none outline-none text-(--text) text-2xl mr-3.75" 
-                id="hamburger" 
+                className="hidden max-[670px]:flex flex-col cursor-pointer bg-transparent border-none outline-none text-(--text) text-2xl mr-3.75"  
                 aria-label="Toggle menu"
                 onClick={onHamburgerClick}
             >
