@@ -218,56 +218,6 @@ body {
     gap: 22px;
 }
 
-.card-title{
-    font-size: 15px;
-    font-weight: 700;
-}
-
-.timer-display{
-    text-align: center;
-    font-size: 56px;
-    letter-spacing: -2px;
-    font-weight: 800;
-    color: var(--primary);
-}
-
-.timer-preset-row, .timer-controls{
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.timer-controls .btn {
-    width: 115px;
-    height: 35px;
-    font-size: 14px;
-    justify-content: center;
-    align-items: center;
-}
-
-/* ────────────────── SPRINT PRIORITIES ────────────────── */
-.drag-list{
-    display: flex;
-    gap: 8px;
-    flex-direction: column;
-}
-
-.drag-text{
-    font-size:12px;
-    color:var(--muted);
-}
-
-/* ────────────────── PROJECT PROGRESS ────────────────── */
-.progress-list{
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-/* ────────────────── MODAL ────────────────── */
-
-
 /**─────────────────── TOAST NOTIFICATIONS ────────────────── */
 .toast-container{
     position: fixed;

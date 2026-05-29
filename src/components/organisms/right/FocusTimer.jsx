@@ -22,18 +22,15 @@ function FocusTimer() {
             <CardHeader
                 title="⏱ Focus Timer"
                 badge={badgeType}
-                id="timerStatus"
                 text={badgeText}
             />
             
             <CardBody>
-                <div className="timer-display">
-                    <div className="timer-digits" id="timerDisplay">
-                        {formattedTime}
-                    </div>
+                <div className="text-center text-[56px] tracking-[-2px] font-extrabold text-(--primary)">
+                    {formattedTime}
                 </div>
                 
-                <div className="timer-preset-row">
+                <div className="flex gap-2 justify-center mt-2.5">
                     {timerButtons.map(btn => (
                         <Button 
                             key={btn}
@@ -44,16 +41,18 @@ function FocusTimer() {
                     ))}
                 </div>
                 
-                <div className="timer-controls">
+                <div className="flex gap-2 justify-center mt-2.5">
                     <Button 
                         variant="primary"
                         text={startBtnText}
                         onClick={handleStartPause}
+                        className="w-28.75 h-8.75 text-sm! justify-center items-center"
                     />
                     <Button 
                         variant="outline"
                         text="↺ Reset"
                         onClick={handleReset}
+                        className="w-28.75 h-8.75 text-sm! justify-center items-center"
                     />
                 </div>
             </CardBody>
