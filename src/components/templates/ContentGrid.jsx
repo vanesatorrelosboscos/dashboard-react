@@ -3,9 +3,9 @@ import RightColumn from "./RightColumn"
 
 function ContentGrid({ sprintTasks, setSprintTasks}) {
   return (
-    <div className="content-grid">
+    <div className="grid grid-cols-[1fr_28vw] gap-5.5 w-full max-[892px]:grid-cols-1">
       <LeftColumn />
-      <RightColumn sprintTasks = {sprintTasks} setSprintTasks={setSprintTasks}/>
+      <RightColumn sprintTasks={sprintTasks} setSprintTasks={setSprintTasks}/>
     </div>
   )
 }

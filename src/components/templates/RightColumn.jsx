@@ -4,7 +4,7 @@ import SprintPriorities from "../organisms/right/SprintPriorities"
 
 function RightColumn({ sprintTasks, setSprintTasks}) {
     return (
-        <div className="right-col">
+        <div className="flex flex-col gap-5.5">
             <FocusTimer />
             <SprintPriorities sprintTasks = { sprintTasks } setSprintTasks={setSprintTasks}/>
             <ProjectProgress />

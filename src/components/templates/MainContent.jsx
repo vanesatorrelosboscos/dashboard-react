@@ -12,7 +12,7 @@ function MainContent() {
     }
     
     return (
-        <main className="main">
+        <main className="col-start-2 row-start-2 flex flex-col p-7 gap-7 max-[1024px]:p-5 max-[1024px]:gap-5 max-[670px]:col-span-full max-[670px]:p-4">
             <Header onAddTask={handleAddTask} />
             <KpiGrid />
             <ContentGrid sprintTasks={sprintTasks} setSprintTasks={setSprintTasks} />

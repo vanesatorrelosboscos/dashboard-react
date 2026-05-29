@@ -51,23 +51,7 @@ body {
     background: var(--surface);
 }
 
-/* ────────────────── MAIN CONTENT ────────────────── */
-.main {
-    grid-column: 2;
-    grid-row: 2;
-    display: flex;
-    flex-direction: column;
-    padding: 28px;
-    gap: 28px;
-}
 
-/* ────────────────── CONTENT GRID ────────────────── */
-.content-grid{
-    display: grid;
-    grid-template-columns: 1fr 28vw;
-    gap: 22px;
-    width: 100%;
-}
 
 .tabs{
     display: flex;
@@ -75,12 +59,6 @@ body {
     padding: 4px;
     background-color: var(--surface2);
     border-radius: var(--radius);
-}
-
-.left-column{
-     display:flex;
-     flex-direction:column;
-     gap:22px;
 }
 
 .tab-panel {
@@ -98,14 +76,6 @@ body {
     padding: 10px 20px;
     font-weight: 700;
     font-size: 14px;
-}
-
-
-/* ────────────────── TIMER CARD ────────────────── */
-.right-col{
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
 }
 
 /**─────────────────── TOAST NOTIFICATIONS ────────────────── */
@@ -179,32 +149,17 @@ body {
         grid-template-columns: 200px 1fr;
     }
 
-    .main {
-        padding: 20px;
-        gap: 20px;
-    }
-
     .nav-item {
         width: 100%;
     }
 }
 
-@media screen and (max-width: 892px) {
 
-    .content-grid{
-        grid-template-columns: 1fr;
-    }
-}
 
 @media screen and (max-width: 670px) {
 
     .app {
         grid-template-columns: 1fr;
-    }
-
-    .main {
-        grid-column: 1 / -1;
-        padding: 16px;
     }
 
     #contactForm > div{

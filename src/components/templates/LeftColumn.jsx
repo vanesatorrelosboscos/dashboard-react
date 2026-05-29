@@ -3,7 +3,7 @@ import RevenueChart from "../organisms/left/RevenueChart"
 
 function LeftColumn() {
     return (
-        <div className="left-column">
+        <div className="flex flex-col gap-5.5">
             <TabsCard />
             <RevenueChart />
         </div>
