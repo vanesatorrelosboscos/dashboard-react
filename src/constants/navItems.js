@@ -1,6 +1,6 @@
 const navItems = [
     {
-        title: "Menu",
+        title: "Main menu",
         items: [
             {
                 "id": "Dashboard",

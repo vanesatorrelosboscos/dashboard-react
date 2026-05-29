@@ -1,8 +1,8 @@
 function NavItem({ isActive, icon, title, badge, badgeColor }) {
-    const navClass = `flex items-center rounded-(--radius) transition-(--transition) text-[14px] h-[40.5px] w-[227px] py-2 px-3.5 font-medium cursor-pointer hover:bg-(--surface2) hover:text-(--text) ${
+    const navClass = `flex items-center rounded-(--radius) transition-(--transition) text-[14px] h-[40.5px] w-[227px] py-2 px-3.5 font-medium cursor-pointer ${
         isActive 
             ? "bg-[rgba(79,70,229,0.15)] text-(--primary)" 
-            : "text-(--muted)"
+            : "text-(--muted) hover:bg-(--surface2) hover:text-(--text)"
     }`
 
     const badgeColors = {

@@ -24,16 +24,15 @@ function Header({ onAddTask }) {
 
     return (
         <>
-            <header className="page-header">
+            <header className="w-full flex justify-between flex-1 items-center max-[892px]:flex-col max-[892px]:items-start max-[892px]:gap-3.75">
                 <HeaderTitle name="John" />
-                <div className="btn-container">
+                <div className="flex gap-2.5">
                     <Button 
                         variant="outline"
                         text="⚡ Quick Add"
                         id="openModalBtn"
                         onClick={handleOpenQA}
                     />
-                    
                     <Button 
                         variant="primary"
                         text="🎉 Demo Toast"

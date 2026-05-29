@@ -105,28 +105,7 @@ body {
 }
 
 
-/* ────────────────── SIDEBAR ────────────────── */
-.sidebar {
-    grid-column: 1;
-    grid-row: 2;
-    background-color: var(--surface);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    box-shadow: var(--shadow);
-    border-right: 1px solid var(--border);
-}
 
-.sidebar-section {
-    text-transform: uppercase;
-    font-size: 10px;
-    color: var(--muted);
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    margin-top: 8px;
-    padding: 10px 4px 0 10px;
-}
 
 /* ────────────────── MAIN CONTENT ────────────────── */
 .main {
@@ -138,31 +117,6 @@ body {
     gap: 28px;
 }
 
-/* ────────────────── PAGE HEADER ────────────────── */
-.page-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex: 1;
-    align-items: center;
-}
-
-.btn{
-    padding: 6px 14px;
-    border-radius: 8px;
-    color: var(--text);
-    font-size: 13px;
-    font-weight: 800;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.btn-container{
-    display:flex;
-    gap:10px;
-}
 
 /* ────────────────── KPI GRID ────────────────── */
 .kpi-grid{
@@ -305,13 +259,6 @@ body {
 }
 
 @media screen and (max-width: 892px) {
-
-    .page-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
     .navbar{
         gap: 12px;
     }
@@ -322,26 +269,9 @@ body {
 }
 
 @media screen and (max-width: 670px) {
+
     .app {
         grid-template-columns: 1fr;
-    }
-
-
-
-    .sidebar {
-        position: fixed; 
-        display: flex;
-        height: 100vh;
-        width: 45vw;
-        left: 0;
-        top: 0;
-        z-index: 100;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .sidebar.active {
-        transform: translateX(0);
     }
 
     .main {
@@ -373,10 +303,6 @@ body {
 }
 
 @media screen and (max-width: 500px){
-    .sidebar {
-        width: 65vw;
-    }
-
     .kpi-grid {
         grid-template-columns: 1fr;
     }
