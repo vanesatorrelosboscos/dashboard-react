@@ -47,19 +47,15 @@ function QuickAddModal({ isOpen, onClose, onAddTask }) {
 
     return (
         <Modal isOpen={isOpen} onClose={onClose} title="⚡ Quick Add Task">
-
-            <form className="modal-body" onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label className="form-label">Task Title</label>
-                    <Input 
-                        className="form-input"
-                        id="modalTaskInput"
-                        placeholder="What needs to be done?"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                </div>
-                <div className="modal-bottom">
+            <form className="px-5.5 py-5" onSubmit={handleSubmit}>
+                <Input 
+                    label="Task Title"
+                    id="modalTaskInput"
+                    placeholder="What needs to be done?"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+                <div className="grid grid-cols-2 gap-3">
                     <Select 
                         label="Priority"
                         id="modalPriority"
@@ -67,7 +63,6 @@ function QuickAddModal({ isOpen, onClose, onAddTask }) {
                         onChange={(e) => setPriority(e.target.value)}
                         options={PRIORITY_OPTIONS}
                     />
-
                     <Select 
                         label="Tag"
                         id="modalTag"
@@ -76,7 +71,7 @@ function QuickAddModal({ isOpen, onClose, onAddTask }) {
                         options={TAG_OPTIONS}
                     />
                 </div>
-                <Button type="submit" className="primary" id="modalAddBtn" text="Add to Sprint →" />
+                <Button type="submit" className="w-full p-2.5! mt-1" text="Add to Sprint →" />
             </form>
         </Modal>
     )

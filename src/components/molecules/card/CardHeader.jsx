@@ -6,12 +6,12 @@ const BADGE_VARIANTS = {
     warning: "bg-(--warning)/15 text-(--warning)"
 }
 
-function CardHeader({ title, className = "", badge, id, text, button }) {
+function CardHeader({ title, className = "", badge, id, text, button, weight=15 }) {
     const badgeClass = BADGE_VARIANTS[badge] ? `${BADGE_BASE} ${BADGE_VARIANTS[badge]}` : className
 
     return (
         <div className="flex justify-between items-center pt-4.5 px-5.5 pb-3.5 border-b border-solid border-(--border)">
-            <span className="text-[15px] font-bold">{title}</span>
+            <span className={`text-[${weight}px] font-bold`}>{title}</span>
             {button ? button : <span className={badgeClass} id={id}>{text}</span>}
         </div>
     )

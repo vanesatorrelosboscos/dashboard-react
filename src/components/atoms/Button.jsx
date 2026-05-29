@@ -22,7 +22,7 @@ const BUTTON_TYPES = {
     `
 }
 
-function Button({ variant = "primary", type = "button", onClick, text, id, title, isActive = false }) {
+function Button({ variant = "primary", type = "button", onClick, text, id, title, isActive = false, className = "" }) {
     const buttonStyle = BUTTON_TYPES[variant]
     const finalVariantClass = typeof buttonStyle === "function" 
         ? buttonStyle(isActive) 
@@ -33,7 +33,7 @@ function Button({ variant = "primary", type = "button", onClick, text, id, title
             id={id} 
             title={title}
             type={type} 
-            className={`${finalVariantClass}`} 
+            className={`${finalVariantClass} ${className}`.trim()} 
             onClick={onClick}
         >
             {text}

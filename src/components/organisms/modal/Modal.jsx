@@ -25,13 +25,21 @@ function Modal({ isOpen, onClose, children, title }) {
     if (!isOpen) return null
 
     return (
-        <div className="overlay" onClick={onClose} style={{ display: 'flex' }}>
-            <div className="modal" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
+        <div 
+            className="fixed inset-0 w-screen h-screen bg-black/50 flex justify-center items-center z-2000"
+            onClick={onClose}
+        >
+            <div 
+                className="bg-(--surface) border border-solid border-(--border) rounded-(--radius) w-125 max-w-[90%]"
+                role="dialog" 
+                aria-modal="true" 
+                onClick={(e) => e.stopPropagation()}
+            >
                 <CardHeader 
                     title={title}
+                    weight={18}
                     button={<Button variant="modalClose" text="✕" onClick={onClose} />} 
                 />
-    
                 {children}
             </div>
         </div>

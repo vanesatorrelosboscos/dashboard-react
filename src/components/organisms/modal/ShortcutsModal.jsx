@@ -5,8 +5,8 @@ import Modal from './Modal'
 function ShortcutsModal({ isOpen, onClose }) {
     return (
         <Modal isOpen={isOpen} onClose={onClose} title="⌨️ Keyboard Shortcuts">
-            <div className="modal-body">
-                <div className="shortcuts-grid">
+            <div className="px-5.5 py-5">
+                <div className="grid grid-cols-2 gap-2.5">
                     {shortcutsData.map(sc => (
                         <ShortCutItem 
                             key={sc.id || crypto.randomUUID()}
