@@ -51,62 +51,6 @@ body {
     background: var(--surface);
 }
 
-
-/* ────────────────── NAVBAR ────────────────── */
-.navbar {
-    grid-column: span 2;
-    background-color: var(--surface);
-    padding: 0 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 64px;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 80;
-    box-shadow: var(--shadow);
-}
-
-.brand-icon{
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    display: flex;
-    font-weight: 800;
-    font-size: 18px;
-    color: #fff;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: var(--text);
-    font-size: 24px;
-    margin-right: 15px;
-}
-
-.brand-name{
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.navbar-right{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-
-
-
 /* ────────────────── MAIN CONTENT ────────────────── */
 .main {
     grid-column: 2;
@@ -117,14 +61,6 @@ body {
     gap: 28px;
 }
 
-
-/* ────────────────── KPI GRID ────────────────── */
-.kpi-grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    width: 100%;
-}
 /* ────────────────── CONTENT GRID ────────────────── */
 .content-grid{
     display: grid;
@@ -236,7 +172,6 @@ body {
 .toast.info { --toast-color: var(--accent); border-left: 3px solid var(--accent); }
 
 
-
 /**─────────────────── RESPONSIVE ────────────────── */
 
 @media screen and (max-width: 1024px) {
@@ -249,19 +184,12 @@ body {
         gap: 20px;
     }
 
-    .kpi-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .nav-item {
         width: 100%;
     }
 }
 
 @media screen and (max-width: 892px) {
-    .navbar{
-        gap: 12px;
-    }
 
     .content-grid{
         grid-template-columns: 1fr;
@@ -279,22 +207,6 @@ body {
         padding: 16px;
     }
 
-    .hamburger {
-        display: flex;
-    }
-    
-    .navbar {
-        padding: 0 16px;
-    }
-
-    .brand-name {
-        display: none;
-    }
-
-    #shortcutsBtn, .search-bar .kbd {
-        display: none;
-    }
-
     #contactForm > div{
         margin-bottom: 0;
         grid-template-columns: 1fr !important;
@@ -303,15 +215,7 @@ body {
 }
 
 @media screen and (max-width: 500px){
-    .kpi-grid {
-        grid-template-columns: 1fr;
-    }
-
     .kpi-card {
         padding: 10px;
-    }
-
-    .team-grid{
-        grid-template-columns: 1fr;
     }
 }

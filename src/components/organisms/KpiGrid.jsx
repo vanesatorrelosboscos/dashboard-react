@@ -3,7 +3,7 @@ import kpiData from "../../constants/kpiData"
 
 function KpiGrid() {
   return (
-    <div className="kpi-grid" id="kpiGrid">
+    <div className="grid grid-cols-4 gap-4.5 w-full max-[1024px]:grid-cols-2 max-[510px]:grid-cols-1">
       {kpiData.map((kpi) => (
         <KpiCard
           key={crypto.randomUUID()}

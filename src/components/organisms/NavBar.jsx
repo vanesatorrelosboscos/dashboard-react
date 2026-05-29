@@ -31,7 +31,6 @@ function NavBar({ onToggleMenu }) {
 
     const handleThemeToggle = (e) => {
         e?.currentTarget?.blur?.()
-        
         const nextMode = !isLightMode
         setIsLightMode(nextMode)
         showToast(`Theme switched to ${nextMode ? 'light' : 'dark'} mode`, "info")
@@ -48,24 +47,9 @@ function NavBar({ onToggleMenu }) {
     }
 
     const NAVBAR_BUTTONS = [
-        {
-            "id": "themeToggle",
-            "title": "Toggle theme",
-            "icon": "🌙",
-            "onclick": handleThemeToggle
-        },
-        {
-            "id": "shortcutsBtn",
-            "title": "Keyboard shortcuts (Ctrl+/)",
-            "icon": "⌨️",
-            "onclick": handleShortcutsOpen
-        },
-        {
-            "id": "notifBtn",
-            "title": "Notifications",
-            "icon": "🔔",
-            "onclick": handleNotifClick
-        }
+        { id: "themeToggle", title: "Toggle theme", icon: "🌙", onclick: handleThemeToggle },
+        { id: "shortcutsBtn", title: "Keyboard shortcuts (Ctrl+/)", icon: "⌨️", onclick: handleShortcutsOpen },
+        { id: "notifBtn", title: "Notifications", icon: "🔔", onclick: handleNotifClick }
     ]
 
     useShortcut("d", handleThemeToggle)
@@ -73,10 +57,10 @@ function NavBar({ onToggleMenu }) {
 
     return (
         <>
-            <nav className="navbar">
+            <nav className="col-span-2 bg-(--surface) px-7 flex justify-between items-center h-16 border-b border-solid border-(--border) sticky top-0 z-80 shadow-theme max-[892px]:gap-3 max-[670px]:px-4">
                 <Logo onHamburgerClick={onToggleMenu} />
                 
-                <div className="navbar-right">
+                <div className="flex items-center gap-3">
                     <SearchBar /> 
                     
                     {NAVBAR_BUTTONS.map(btn => (
@@ -86,6 +70,7 @@ function NavBar({ onToggleMenu }) {
                             text={btn.icon}
                             onClick={btn.onclick}
                             variant="icon"
+                            className={btn.id === 'shortcutsBtn' ? 'max-[670px]:hidden' : ''}
                         />
                     ))}
 
