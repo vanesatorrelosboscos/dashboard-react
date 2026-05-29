@@ -60,7 +60,7 @@ function Input({
 
     return (
         <div className="mb-4 relative">
-            <label htmlFor={id} className="block text-[12px] font-semibold">{label}</label>
+            <label htmlFor={id} className="block text-[13px] font-semibold">{label}</label>
             
             <div>
                 {inputElement}

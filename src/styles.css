@@ -388,16 +388,6 @@ body {
 .toast.info { --toast-color: var(--accent); border-left: 3px solid var(--accent); }
 
 
-/* ─────────────────── MONTHLY REVENUE ────────────────── */
-.chart-wrap { position: relative; }
-canvas { display: block; width: 100%; }
-.chart-tooltip {
-  position: absolute; background: var(--surface3);
-  border: 1px solid var(--border); border-radius: 8px;
-  padding: 6px 12px; font-size: 12px; font-weight: 600;
-  pointer-events: none; opacity: 0; transition: opacity 0.15s;
-  white-space: nowrap; z-index: 10;
-}
 
 /**─────────────────── RESPONSIVE ────────────────── */
 

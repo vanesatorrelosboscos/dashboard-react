@@ -34,7 +34,6 @@ function RevenueChart() {
 
             ctx.clearRect(0, 0, W, H);
 
-            // Grid lines
             ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border') || 'rgba(255,255,255,0.08)';
             ctx.lineWidth = 1;
             
@@ -52,7 +51,6 @@ function RevenueChart() {
                 ctx.fillText('$' + val + 'k', pad.left - 6, y + 4);
             }
 
-            // Bars
             data.forEach((val, i) => {
                 const x = pad.left + i * (chartW / data.length) + gap;
                 const bh = (val / max) * chartH;
@@ -74,7 +72,6 @@ function RevenueChart() {
                 ctx.closePath(); 
                 ctx.fill();
 
-                // X labels
                 ctx.fillStyle = '#9CA3AF'; 
                 ctx.font = '11px Inter, sans-serif'; 
                 ctx.textAlign = 'center';
@@ -83,9 +80,7 @@ function RevenueChart() {
         }
 
         draw();
-
         window.addEventListener('resize', draw);
-        
         return () => window.removeEventListener('resize', draw);
     }, []); 
 
@@ -120,29 +115,26 @@ function RevenueChart() {
     return (
         <Card>
             <CardHeader 
-                title = "📊 Monthly Revenue"
-                badge = "success"
-                text = "Live"
+                title="📊 Monthly Revenue"
+                badge="success"
+                text="Live"
             />
             
             <CardBody>
-                <div className="chart-wrap" style={{ position: 'relative', width: '100%' }}>
-                    
+                <div className="relative w-full">
                     <canvas
                         ref={canvasRef}
-                        style={{ width: '100%', height: '200px', display: 'block' }}
+                        className="block w-full h-50"
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
                     ></canvas>
 
                     <div 
-                        className="chart-tooltip" 
+                        className="absolute bg-(--surface3) border border-solid border-(--border) rounded-lg px-3 py-1.5 text-xs font-semibold pointer-events-none whitespace-nowrap z-10"
                         style={{
-                            position: 'absolute',
                             opacity: tooltip.opacity,
                             left: `${tooltip.x}px`,
                             top: `${tooltip.y}px`,
-                            pointerEvents: 'none',
                             transition: 'opacity 0.2s ease, left 0.1s ease, top 0.1s ease'
                         }}
                     >
